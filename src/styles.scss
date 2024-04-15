@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+// Bases
+$primary: #4b98d9;
+$primary75: #6fa6d4;
+$primary50: #9fc3e2;
+$primary25: #cfe1f1;
+
+// Neutral
+$grey100: #353535;
+$grey75: #686868;
+$grey50: #9a9a9a;
+$grey25: #cdcdcd;
+$light: #fafcfe;
+
+// Functions
+$succes: #3bd378;
+$error: #e75249;
+
+// Information
+$text: #191c3d;
+$subltleText: #191c3d;
+$ancent: #d8dbf5;
+$inverseText: #f7f7fc;
+
+// Fonts
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0%;
+  background-color: $primary25;
+}
+
+.bodyBold {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0%;
+}
+
+.title,
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 64px;
+  letter-spacing: 0%;
+}
+
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 0%;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0%;
+}
+
+.subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: regular;
+  font-size: 24px;
+  letter-spacing: 0%;
+}
+
+.small {
+  font-family: "Roboto", sans-serif;
+  font-weight: medium;
+  font-size: 10px;
+  letter-spacing: 0%;
+}
+
+.smallTitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 10px;
+  letter-spacing: 0%;
+}
