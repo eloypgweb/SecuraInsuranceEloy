@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
 .welcome-section {
-  height: 40vh;
+  height: 70vh;
   text-align: center;
   padding: 100px 20px;
   position: relative;
@@ -54,4 +54,16 @@ p {
   .pagada {
     color: #4caf50; /* Color para estado pagada */
   }
+}
+
+.tabla {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 0%;
 }

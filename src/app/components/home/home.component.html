@@ -2,3 +2,36 @@
   <h1>Bienvenido a tu área personal</h1>
   <p>¡Gracias a ti más personas pueden disfrutar de una vida más segura!</p>
 </div>
+<div class="tabla">
+  <p>Próximas renovaciones</p>
+  <table>
+    <thead class="smallTitle tituloss">
+      <tr>
+        <th>No. de póliza</th>
+        <th>Nombre del riesgo</th>
+        <th>Fecha de contrato</th>
+        <th>Fecha de vencimiento</th>
+        <th>Importe</th>
+        <th>Estado de la póliza</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="datosos" *ngFor="let instalment of detalles1.instalments">
+        <td class="terre">{{ detalles1.nPolicy }}</td>
+        <td class="terre">{{ detalles1.riskName }}</td>
+        <td class="terre">{{ instalment.startDate }}</td>
+        <td class="terre">{{ instalment.endDate }}</td>
+        <td class="terre">{{ instalment.amount }} €</td>
+        <td
+          class="border px-4 py-2
+          {{
+            instalment.state === 'pagada' ? 'text-green-600' : 'text-red-600'
+          }}"
+        >
+          {{ instalment.state === "pagada" ? "Pagada" : "Pendiente" }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a routerLink="/renovaciones">Ver todas</a>
+</div>
