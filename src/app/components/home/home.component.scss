@@ -25,3 +25,33 @@ p {
   font-size: 24px;
   letter-spacing: 0%;
 }
+
+.renovaciones-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+  th,
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  .pendiente {
+    color: #ff9800; /* Color para estado pendiente */
+  }
+
+  .pagada {
+    color: #4caf50; /* Color para estado pagada */
+  }
+}
