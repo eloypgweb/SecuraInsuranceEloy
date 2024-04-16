@@ -1,0 +1,27 @@
+@import "../../../styles.scss";
+
+.welcome-section {
+  height: 40vh;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  background-image: url("../../../assets/welcome-img.webp");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo oscurecido */
+  background-blend-mode: multiply; /* Mezcla el color de fondo con la imagen de fondo */
+}
+
+h1 {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 64px;
+  letter-spacing: 0%;
+}
+p {
+  font-family: "Roboto";
+  font-weight: regular;
+  font-size: 24px;
+  letter-spacing: 0%;
+}

@@ -1,20 +1,60 @@
 @import "../../../styles.scss";
 
-.example-spacer {
+.spacer {
   flex: 1 1 auto;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-}
-
-.barra {
+.navbar {
   background-color: $light;
   color: $text;
+
+  .navbar-logo {
+    height: 40px;
+  }
+
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mat-icon {
+    margin-right: 4px;
+    vertical-align: middle; /* Alinea verticalmente el icono con el texto */
+    color: $primary;
+  }
+
+  span {
+    vertical-align: middle; /* Alinea verticalmente el texto con el icono */
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    letter-spacing: 0%;
+  }
+
+  a {
+    color: $text !important;
+
+    &:hover {
+      background-color: $primary25;
+      color: $light;
+      border: 0.8px solid $primary;
+    }
+  }
+
+  button {
+    color: $text !important;
+
+    &:hover {
+      background-color: $grey50;
+      color: $light;
+      text-decoration: underline;
+    }
+  }
 }
 
-.botones {
+.cosas {
+  cursor: pointer;
+  margin: 5px;
 }

@@ -1,34 +1,32 @@
-<mat-toolbar class="barra">
-  <span>*logo*</span>
-
-  <button mat-raised-button color="accent">Inicio</button>
-  <button mat-raised-button class="botones">Próximas Renovaciones</button>
-
-  <span class="example-spacer"></span>
-  <!-- TENGO QUE DECIDIR CUÁL ES LA MEJOR OPCIÓN PARA LOS SELECTS -->
-  <mat-form-field>
-    <!-- bootstrapPerson -->
-    <mat-label><ng-icon name="heroUsers"></ng-icon> Perfil</mat-label>
-    <mat-select [disabled]="disableSelect.value">
-      <mat-option value="option1">Option 1</mat-option>
-      <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-      <mat-option value="option3">Option 3</mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select [(value)]="selectedPerfil">
-      @for (option of perfil; track option) {
-      <mat-option [value]="option.value">{{ option.viewValue }}</mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-select [(value)]="selectedIdioma">
-      @for (option of idioma; track option) {
-      <mat-option [value]="option.value">{{ option.viewValue }}</mat-option>
-      }
-    </mat-select>
-  </mat-form-field>
+<mat-toolbar class="navbar">
+  <mat-toolbar-row>
+    <img
+      src="../../../assets/logoSI.webp"
+      alt="Secura Insurance"
+      class="navbar-logo"
+    />
+    <a mat-button routerLink="/home">Inicio</a>
+    <a mat-button routerLink="/renovaciones">Próximas renovaciones</a>
+    <span class="spacer"></span>
+    <mat-menu #profileMenu="matMenu">
+      <button mat-menu-item>Perfil</button>
+      <button mat-menu-item>Salir</button>
+    </mat-menu>
+    <mat-menu #langMenu="matMenu">
+      <button mat-menu-item>Español</button>
+      <button mat-menu-item>English</button>
+    </mat-menu>
+    <div class="cosas">
+      <mat-button [matMenuTriggerFor]="profileMenu">
+        <mat-icon>account_circle</mat-icon>
+        <span>Mi perfil</span>
+      </mat-button>
+    </div>
+    <div class="cosas">
+      <mat-button [matMenuTriggerFor]="langMenu">
+        <mat-icon>language</mat-icon>
+        <span>Español</span>
+      </mat-button>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>

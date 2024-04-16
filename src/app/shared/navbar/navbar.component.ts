@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgIconComponent } from '@ng-icons/core';
+import { MatMenu, MatMenuModule } from '@angular/material/menu';
 
 interface Idioma {
   value: string;
@@ -23,6 +24,7 @@ interface Perfil {
   selector: 'app-navbar',
   standalone: true,
   imports: [
+    RouterLink,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
@@ -33,52 +35,28 @@ interface Perfil {
     MatSelectModule,
     MatInputModule,
     NgIconComponent,
+    MatMenuModule,
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
   disableSelect = new FormControl(false);
-  idioma: Idioma[] = [
-    { value: 'ES', viewValue: 'Español' },
-    { value: 'EN', viewValue: 'English' },
-    { value: 'CA', viewValue: 'Catalán' },
-  ];
 
-  selectedIdioma = this.idioma[0].value;
+  // token: string | null = null;
 
-  perfil: Perfil[] = [
-    { value: 'misperfil', viewValue: 'Mi perfil' },
-    { value: 'misdatos', viewValue: 'Mis datos personales' },
-    { value: 'micontra', viewValue: 'Mi contraseña' },
-    { value: 'contacto', viewValue: 'Contacto' },
-    { value: 'cerrarses', viewValue: 'Cerrar sesión' },
-  ];
-  selectedPerfil = this.perfil[0].value;
-
-  token: string | null = null;
-
-  constructor(private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
-    console.log('ToolbarComponent initialized');
-    this.token = sessionStorage.getItem('token');
+    console.log('NavBarComponent initialized');
+    // this.token = sessionStorage.getItem('token');
   }
 
-  navegarParaHome(): void {
-    this.router.navigate(['/']);
-  }
-
-  navegarParaRenovaciones(): void {
-    this.router.navigate(['renovaciones']);
-  }
-
-  // login(): void {
-  //   this.router.navigate(['login']);
+  // navegarParaHome(): void {
+  //   this.router.navigate(['/']);
   // }
 
-  // logout(): void {
-  //   sessionStorage.removeItem('token');
-  //   this.router.navigate(['home']);
+  // navegarParaRenovaciones(): void {
+  //   this.router.navigate(['renovaciones']);
   // }
 }
