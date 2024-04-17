@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Detalles1Service } from '../../services/detalles1.service';
 import { NgClass, NgFor } from '@angular/common';
-import { DataSource } from '@angular/cdk/collections';
 import { RouterLink } from '@angular/router';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgFor, NgClass, RouterLink],
+  imports: [NgFor, NgClass, RouterLink, MatTableModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

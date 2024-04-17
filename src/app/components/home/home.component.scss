@@ -1,6 +1,7 @@
 @import "../../../styles.scss";
 
 .welcome-section {
+  /* Estilos de la sección de bienvenida */
   height: 70vh;
   text-align: center;
   padding: 100px 20px;
@@ -9,61 +10,103 @@
   background-size: cover;
   background-position: center;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo oscurecido */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
   background-blend-mode: multiply; /* Mezcla el color de fondo con la imagen de fondo */
 }
 
-h1 {
-  font-family: "Roboto";
-  font-weight: bold;
-  font-size: 64px;
-  letter-spacing: 0%;
-}
-p {
-  font-family: "Roboto";
-  font-weight: regular;
-  font-size: 24px;
-  letter-spacing: 0%;
+.table-container {
+  /* Contenedor de la tabla */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.renovaciones-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-
-  th,
-  td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-  }
-
-  th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-  }
-
-  td {
-    font-size: 14px;
-  }
-
-  .pendiente {
-    color: #ff9800; /* Color para estado pendiente */
-  }
-
-  .pagada {
-    color: #4caf50; /* Color para estado pagada */
-  }
+.table-wrapper {
+  /* Envoltorio de la tabla */
+  overflow-x: auto; /* Habilita el desplazamiento horizontal */
+  max-width: 100%; /* Ajusta el ancho máximo */
 }
 
 .tabla {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
-p {
-  font-family: "Roboto";
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+td {
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+td:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+td:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+tr {
+  margin-bottom: 10px;
+}
+
+.smallTitle {
+  font-size: 14px;
+  color: #333;
   font-weight: bold;
-  font-size: 24px;
-  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.cabecera th {
+  background-color: #ffedcc;
+}
+
+.cuerpo td:nth-child(1),
+.cuerpo th:nth-child(1) {
+  width: 15%;
+}
+
+.cuerpo td:nth-child(5),
+.cuerpo th:nth-child(5) {
+  width: 15%;
+}
+
+.cuerpo td:nth-child(6),
+.cuerpo th:nth-child(6) {
+  width: 20%;
+}
+
+.vertodas {
+  text-align: center;
+  padding: 5px;
+  margin: 15px;
+  background-color: $primary25;
+  width: 5%;
+  border: 0.7px solid $light;
+  border-radius: 20px;
+  &:hover {
+    background-color: $light;
+    border: 0.7px solid $primary;
+    color: $text;
+    text-align: center;
+    padding: 5px;
+    margin: 15px;
+  }
+}
+
+a {
+  color: $text;
+  width: 100%;
+  height: 100%;
 }
