@@ -15,6 +15,10 @@
   background-blend-mode: multiply; /* Mezcla el color de fondo con la imagen de fondo */
 }
 
+.todo {
+  margin-top: 25px;
+}
+
 .table-container {
   /* Contenedor de la tabla */
   display: flex;
@@ -31,6 +35,11 @@
 
 .tabla {
   margin: 20px;
+  padding: 10px;
+}
+
+h3 {
+  margin: 15px;
 }
 
 table {
@@ -44,8 +53,7 @@ td {
 }
 
 td {
-  background-color: #fff;
-  border-radius: 20px;
+  // background-color: #fff;
 }
 
 td:first-child {
@@ -62,15 +70,13 @@ tr {
   margin-bottom: 10px;
 }
 
-.smallTitle {
-  font-size: 14px;
-  color: #333;
-  font-weight: bold;
-  text-transform: uppercase;
+// AJUSTAR COLORES Y ESTILOS DE LA TABLA
+.contentBucle {
+  background-color: $grey25;
+  border-radius: 20px;
 }
 
 .cabecera th {
-  background-color: #ffedcc;
 }
 
 .cuerpo td:nth-child(1),

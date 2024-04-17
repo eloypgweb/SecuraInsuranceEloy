@@ -5,39 +5,44 @@
   </p>
 </div>
 
-<div class="table-container">
-  <p>Próximas renovaciones</p>
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>No. de póliza</th>
-          <th>Nombre del riesgo</th>
-          <th>Fecha de contrato</th>
-          <th>Fecha de vencimiento</th>
-          <th>Importe</th>
-          <th>Estado de la póliza</th>
-        </tr>
-      </thead>
-      <tbody class="cuerpo">
-        <tr *ngFor="let instalment of detalles1.instalments">
-          <td class="terre">{{ detalles1.nPolicy }}</td>
-          <td class="terre">{{ detalles1.riskName }}</td>
-          <td class="terre">{{ instalment.startDate }}</td>
-          <td class="terre">{{ instalment.endDate }}</td>
-          <td class="terre">{{ instalment.amount }} €</td>
-          <td
-            class="border px-4 py-2"
-            [ngClass]="{
-              'text-green-600': instalment.state === 'pagada',
-              'text-red-600': instalment.state === 'pendiente'
-            }"
+<div class="todo">
+  <h3 class="">Próximas renovaciones</h3>
+  <div class="table-container">
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>No. de póliza</th>
+            <th>Nombre del riesgo</th>
+            <th>Fecha de contrato</th>
+            <th>Fecha de vencimiento</th>
+            <th>Importe</th>
+            <th>Estado de la póliza</th>
+          </tr>
+        </thead>
+        <tbody class="cuerpo">
+          <tr
+            class="contentBucle"
+            *ngFor="let instalment of detalles1.instalments"
           >
-            {{ instalment.state === "pagada" ? "Pagada" : "Pendiente" }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <td class="terre">{{ detalles1.nPolicy }}</td>
+            <td class="terre">{{ detalles1.riskName }}</td>
+            <td class="terre">{{ instalment.startDate }}</td>
+            <td class="terre">{{ instalment.endDate }}</td>
+            <td class="terre">{{ instalment.amount }} €</td>
+            <td
+              class="border px-4 py-2"
+              [ngClass]="{
+                'text-green-600': instalment.state === 'pagada',
+                'text-red-600': instalment.state === 'pendiente'
+              }"
+            >
+              {{ instalment.state === "pagada" ? "Pagada" : "Pendiente" }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 
