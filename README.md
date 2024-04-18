@@ -1,7 +1,6 @@
 # NOTAS
 
-- Falta estilizar y adaptar el header
-- Falta estilizar y adaptar el footer
+- Usar Material o Tailwind, pero no 2 librerías
 
 # REALIZADO
 
