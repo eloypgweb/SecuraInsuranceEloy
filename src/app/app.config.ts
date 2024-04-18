@@ -12,6 +12,6 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideAnimationsAsync(),
     provideHttpClient(), // Añade provideHttpClient a los providers
-    FormatoTelefonoPipe,
+    FormatoTelefonoPipe, provideAnimationsAsync(),
   ],
 };

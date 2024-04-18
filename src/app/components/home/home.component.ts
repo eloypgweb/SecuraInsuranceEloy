@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Detalles1Service } from '../../services/detalles1.service';
 
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { ClientesPotencialesService } from '../../services/clientes-potenciales.service';
@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { featherAirplay } from '@ng-icons/feather-icons';
 import { bootstrapTrash } from '@ng-icons/bootstrap-icons';
+import { bootstrapClock } from '@ng-icons/bootstrap-icons';
+import { bootstrapCheck2 } from '@ng-icons/bootstrap-icons';
 
 import { FormatoTelefonoPipe } from '../../pipes/formato-telefono-pipe.pipe';
 
@@ -19,13 +21,21 @@ import { FormatoTelefonoPipe } from '../../pipes/formato-telefono-pipe.pipe';
   imports: [
     NgIconComponent,
     NgFor,
+    NgIf,
     NgClass,
     RouterLink,
     MatTableModule,
     MatIconModule,
     FormatoTelefonoPipe,
   ],
-  viewProviders: [provideIcons({ featherAirplay, bootstrapTrash })],
+  viewProviders: [
+    provideIcons({
+      featherAirplay,
+      bootstrapTrash,
+      bootstrapClock,
+      bootstrapCheck2,
+    }),
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

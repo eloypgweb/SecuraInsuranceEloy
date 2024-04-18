@@ -10,6 +10,10 @@ export class ClientesPotencialesService {
 
   constructor(private http: HttpClient) {
     console.log('ClientesPotencialesService initialized');
+    this.loadData();
+  }
+
+  loadData() {
     this.http
       .get('../../assets/data/clientes_potenciales.json')
       .subscribe((data) => {

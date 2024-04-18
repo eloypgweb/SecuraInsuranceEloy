@@ -10,6 +10,10 @@ export class Detalles1Service {
 
   constructor(private http: HttpClient) {
     console.log('Detalles1Service initialized');
+    this.loadData();
+  }
+
+  loadData() {
     this.http.get('../../assets/data/detalle1.json').subscribe((data) => {
       this.detalles1 = data;
       this.cargados = true;

@@ -1,48 +1,98 @@
 <div class="welcome-section">
   <h1 class="title">Bienvenido a tu área personal</h1>
-  <p class="subtitle">
+  <p class="subtitle mt-5">
     ¡Gracias a ti más personas pueden disfrutar de una vida más segura!
   </p>
 </div>
 
 <div class="todo">
   <h3 class="">Próximas renovaciones</h3>
-  <div class="table-container">
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>No. de póliza</th>
-            <th>Nombre del riesgo</th>
-            <th>Fecha de contrato</th>
-            <th>Fecha de vencimiento</th>
-            <th>Importe</th>
-            <th>Estado de la póliza</th>
-          </tr>
-        </thead>
-        <tbody class="cuerpo">
-          <tr
-            class="contentBucle"
-            *ngFor="let instalment of detalles1.instalments"
+  <div>
+    <table
+      mat-table
+      [dataSource]="detalles1.instalments"
+      class="mat-elevation-z8"
+    >
+      <!-- No. de póliza Column -->
+      <ng-container matColumnDef="nPolicy">
+        <th mat-header-cell *matHeaderCellDef>No. de póliza</th>
+        <td mat-cell *matCellDef="let element">{{ detalles1.nPolicy }}</td>
+      </ng-container>
+
+      <!-- Nombre del riesgo Column -->
+      <ng-container matColumnDef="riskName">
+        <th mat-header-cell *matHeaderCellDef>Nombre del riesgo</th>
+        <td mat-cell *matCellDef="let element">{{ detalles1.riskName }}</td>
+      </ng-container>
+
+      <!-- Fecha de contrato Column -->
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha de contrato</th>
+        <td mat-cell *matCellDef="let element">{{ element.startDate }}</td>
+      </ng-container>
+
+      <!-- Fecha de vencimiento Column -->
+      <ng-container matColumnDef="endDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha de vencimiento</th>
+        <td mat-cell *matCellDef="let element">{{ element.endDate }}</td>
+      </ng-container>
+
+      <!-- Importe Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Importe</th>
+        <td mat-cell *matCellDef="let element">{{ element.amount }} €</td>
+      </ng-container>
+
+      <!-- Estado de la póliza Column -->
+      <ng-container matColumnDef="state">
+        <th mat-header-cell *matHeaderCellDef>Estado de la póliza</th>
+        <td mat-cell *matCellDef="let element">
+          <div
+            [ngClass]="
+              element.state === 'pagada'
+                ? 'bg-green-100 text-green-700'
+                : 'bg-yellow-100 text-gray-600'
+            "
+            class="rounded-lg p-1 inline-block"
           >
-            <td class="terre">{{ detalles1.nPolicy }}</td>
-            <td class="terre">{{ detalles1.riskName }}</td>
-            <td class="terre">{{ instalment.startDate }}</td>
-            <td class="terre">{{ instalment.endDate }}</td>
-            <td class="terre">{{ instalment.amount }} €</td>
-            <td
-              class="border px-4 py-2"
-              [ngClass]="{
-                'text-green-600': instalment.state === 'pagada',
-                'text-red-600': instalment.state === 'pendiente'
-              }"
-            >
-              {{ instalment.state === "pagada" ? "Pagada" : "Pendiente" }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+            <ng-container *ngIf="element.state === 'pagada'; else pendiente">
+              <ng-icon class="mr-2" name="bootstrapCheck2"></ng-icon>
+              Pagada
+            </ng-container>
+            <ng-template #pendiente>
+              <ng-icon class="mr-2" name="bootstrapClock"></ng-icon>
+              Pendiente
+            </ng-template>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr
+        mat-header-row
+        *matHeaderRowDef="[
+          'nPolicy',
+          'riskName',
+          'startDate',
+          'endDate',
+          'amount',
+          'state'
+        ]"
+      ></tr>
+      <tr
+        mat-row
+        *matRowDef="
+          let row;
+          columns: [
+            'nPolicy',
+            'riskName',
+            'startDate',
+            'endDate',
+            'amount',
+            'state'
+          ]
+        "
+      ></tr>
+    </table>
   </div>
 </div>
 
