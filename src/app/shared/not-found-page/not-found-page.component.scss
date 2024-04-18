@@ -1,0 +1,41 @@
+@import "../../../styles.scss";
+
+.container {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columna */
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.iconos {
+  font-size: 10rem; /* Tamaño grande para el icono */
+  margin-bottom: 20px; /* Espacio entre el icono y la caja de información */
+}
+
+.box {
+  max-width: 500px;
+  padding: 20px;
+  text-align: center;
+  background-color: $light;
+  color: $text;
+  border: 0.8px solid $primary;
+  border-radius: 20px;
+}
+
+.incard {
+  color: $text;
+}
+
+.btns {
+  margin: 0 auto;
+  background-color: $light;
+  color: $text;
+  border: 0.8px solid $primary;
+  border-radius: 15px;
+  padding: 10px 20px;
+  &:hover {
+    background-color: $primary;
+    color: $light;
+  }
+}

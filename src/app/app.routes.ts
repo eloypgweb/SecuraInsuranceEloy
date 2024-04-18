@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { RenovacionesComponent } from './components/renovaciones/renovaciones.component';
+import { NotFoundPageComponent } from './shared/not-found-page/not-found-page.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,5 +19,5 @@ export const routes: Routes = [
   //   component: ContactDetailPageComponent,
   //   canActivate: [authGuard],
   // },
-  // { path: '**', component: NotFoundPageComponent },
+  { path: '**', component: NotFoundPageComponent },
 ];
