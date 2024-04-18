@@ -7,6 +7,7 @@
 .navbar {
   background-color: $light;
   color: $text;
+  padding: 10px;
 
   .navbar-logo {
     height: 40px;
@@ -57,4 +58,32 @@
 .cosas {
   cursor: pointer;
   margin: 5px;
+}
+
+.btnder {
+  background-color: $light;
+  color: $text;
+  border: 0.8px solid $light;
+  &:hover {
+    background-color: $primary25;
+    color: $light;
+    border: 0.8px solid $primary;
+    text-decoration: none;
+  }
+}
+
+.aaa {
+  color: $text !important;
+
+  &:hover {
+    background-color: $primary25 !important;
+    color: $light !important;
+    border: 0.8px solid $primary !important;
+    text-decoration: none !important;
+  }
+}
+
+.dropdown {
+  background-color: $light !important;
+  color: $text !important;
 }

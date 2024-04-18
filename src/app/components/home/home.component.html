@@ -49,3 +49,33 @@
 <div class="vertodas">
   <a mat-button routerLink="/renovaciones">Ver todas</a>
 </div>
+
+<div>
+  <h3 class="mt-5">Clientes Potenciales</h3>
+  <div class="clientesPotenciales grid grid-cols-1 md:grid-cols-2 gap-4">
+    <ng-container *ngFor="let cliente of clipot.slice(0, 2); let i = index">
+      <div class="card p-4 shadow-lg rounded-lg border">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="nombre">
+            {{ cliente.personalData.name }} {{ cliente.personalData.surname }}
+          </h3>
+          <button
+            mat-icon-button
+            aria-label="Eliminar"
+            (click)="eliminarCliente(i)"
+          >
+            <ng-icon class="iconos" name="bootstrapTrash"></ng-icon>
+          </button>
+        </div>
+        <div class="praof">
+          <p class="mb-1">Producto a ofrecer: {{ cliente.offerProduct }}</p>
+        </div>
+
+        <div class="bodyBold infoss flex mb-2">
+          <p class="mr-4">Email: {{ cliente.personalData.email }}</p>
+          <p>Teléfono: {{ cliente.personalData.phone | formatoTelefono }}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

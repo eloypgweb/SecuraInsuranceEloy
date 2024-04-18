@@ -74,7 +74,7 @@ h3 {
 
 .subtitle {
   font-family: "Roboto", sans-serif;
-  font-weight: regular;
+  font-weight: normal;
   font-size: 24px;
   letter-spacing: 0%;
 }
@@ -91,4 +91,8 @@ h3 {
   font-weight: bold;
   font-size: 10px;
   letter-spacing: 0%;
+}
+
+.iconos {
+  color: $primary;
 }

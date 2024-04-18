@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { featherAirplay } from '@ng-icons/feather-icons';
 import { bootstrapTelephone } from '@ng-icons/bootstrap-icons';
@@ -11,6 +11,7 @@ import { bootstrapEnvelope } from '@ng-icons/bootstrap-icons';
   viewProviders: [
     provideIcons({ featherAirplay, bootstrapTelephone, bootstrapEnvelope }),
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })

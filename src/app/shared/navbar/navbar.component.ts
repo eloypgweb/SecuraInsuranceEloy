@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,8 +8,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { NgIconComponent } from '@ng-icons/core';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
+
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { featherAirplay } from '@ng-icons/feather-icons';
+import { bootstrapCaretDownFill } from '@ng-icons/bootstrap-icons';
 
 interface Idioma {
   value: string;
@@ -37,6 +40,8 @@ interface Perfil {
     NgIconComponent,
     MatMenuModule,
   ],
+  viewProviders: [provideIcons({ featherAirplay, bootstrapCaretDownFill })],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
