@@ -5,23 +5,23 @@
       alt="Secura Insurance"
       class="navbar-logo"
     />
-    <a mat-button routerLink="/home">Inicio</a>
-    <a mat-button routerLink="/renovaciones">Próximas renovaciones</a>
+    <a mat-button routerLink="/home" i18n>Inicio</a>
+    <a mat-button routerLink="/renovaciones" i18n>Próximas renovaciones</a>
     <span class="spacer"></span>
 
     <div class="cosas">
       <button class="aaa" mat-button [matMenuTriggerFor]="profile">
-        <mat-icon>account_circle</mat-icon><span> Mi Perfil </span
+        <mat-icon>account_circle</mat-icon><span i18n> Mi Perfil </span
         ><ng-icon class="mat-icon" name="bootstrapCaretDownFill"></ng-icon>
       </button>
       <mat-menu class="dropdown" #profile="matMenu">
-        <button mat-menu-item>Perfil</button>
-        <button mat-menu-item>Salir</button>
+        <button mat-menu-item i18n>Perfil</button>
+        <button mat-menu-item i18n>Salir</button>
       </mat-menu>
     </div>
     <div class="cosas">
       <button class="aaa" mat-button [matMenuTriggerFor]="language">
-        <mat-icon>language</mat-icon><span> Idioma </span
+        <mat-icon>language</mat-icon><span i18n> Idioma </span
         ><ng-icon class="mat-icon" name="bootstrapCaretDownFill"></ng-icon>
       </button>
       <mat-menu #language="matMenu" class="dropdown">

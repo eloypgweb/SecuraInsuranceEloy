@@ -13,7 +13,10 @@ import { bootstrapTrash } from '@ng-icons/bootstrap-icons';
 import { bootstrapClock } from '@ng-icons/bootstrap-icons';
 import { bootstrapCheck2 } from '@ng-icons/bootstrap-icons';
 
+// pipes
 import { FormatoTelefonoPipe } from '../../pipes/formato-telefono-pipe.pipe';
+import { FormatoFechaPipe } from '../../pipes/formato-fecha.pipe';
+import { FormatoDineroPipe } from '../../pipes/formato-dinero.pipe';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +30,8 @@ import { FormatoTelefonoPipe } from '../../pipes/formato-telefono-pipe.pipe';
     MatTableModule,
     MatIconModule,
     FormatoTelefonoPipe,
+    FormatoFechaPipe,
+    FormatoDineroPipe,
   ],
   viewProviders: [
     provideIcons({
@@ -41,6 +46,9 @@ import { FormatoTelefonoPipe } from '../../pipes/formato-telefono-pipe.pipe';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  titulillo = $localize`Bienvenido a tu área personal`;
+  subtitulillo = $localize`¡Gracias a ti más personas pueden disfrutar de una vida más segura!`;
+
   detalles1: any = {};
   clipot: any[] = [];
 
@@ -52,8 +60,6 @@ export class HomeComponent {
   ngOnInit() {
     console.log('Home initialized');
     this.detalles1 = this.detallesService.detalles1;
-    // this.clipot = this.clientesPotService.clipot;
-    // this.clipot = this.clientesPotService.clipot.slice(0, 2);
     this.actualizarClientes();
   }
 

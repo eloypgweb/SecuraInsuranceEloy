@@ -15,12 +15,23 @@
   background-blend-mode: multiply; /* Mezcla el color de fondo con la imagen de fondo */
 }
 
+.parrafos {
+  margin-top: 150px;
+}
+
 .todo {
+  margin: 15px;
   margin-top: 25px;
 }
 
 h3 {
   margin: 15px;
+}
+
+// No pilla los márgenes. Con el F12 se ve que los aplica pero no los muestra. La tabla está como "superpuesta" o nose.
+tr {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .vertodas {

@@ -14,4 +14,10 @@ import { HomeComponent } from './components/home/home.component';
 })
 export class AppComponent {
   title = 'Secura Insurance Eloy';
+
+  constructor() {}
+
+  ngOnInit() {
+    console.log('App initialized');
+  }
 }

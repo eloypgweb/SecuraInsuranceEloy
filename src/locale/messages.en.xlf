@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es-ES" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ titulillo }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7708270344948043036" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ subtitulillo }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5817002699361605941" datatype="html">
+        <source>Próximas renovaciones</source>
+        <target>Upcoming renovations</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4125295141060554086" datatype="html">
+        <source>No. de póliza</source>
+        <target>Policy No.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2755451146382489204" datatype="html">
+        <source>Nombre del riesgo</source>
+        <target>Risk name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1972098002949814131" datatype="html">
+        <source>Fecha de contrato</source>
+        <target>Contract date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4683614117782128648" datatype="html">
+        <source>Fecha de vencimiento</source>
+        <target>Due date</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1881314525617287984" datatype="html">
+        <source>Importe</source>
+        <target>Amount</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="779345199951458721" datatype="html">
+        <source>Estado de la póliza</source>
+        <target>Policy status</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">52,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7753413853351015529" datatype="html">
+        <source>Ver todas</source>
+        <target>See all</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">104,105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4382557783829966528" datatype="html">
+        <source>Clientes Potenciales</source>
+        <target>Potential customers</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">108,109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="521952543941236208" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.name }}"/> <x id="INTERPOLATION_1" equiv-text="{{ cliente.personalData.surname }}"/> </source>
+        <target><x id="INTERPOLATION" equiv-text="{{ cliente.personalData.name }}"/> <x id="INTERPOLATION_1" equiv-text="{{ cliente.personalData.surname }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">114,116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2073689515078568313" datatype="html">
+        <source> Producto a ofrecer: <x id="INTERPOLATION" equiv-text="{{ cliente.offerProduct }}"/> </source>
+        <target> Product to offer: <x id="INTERPOLATION" equiv-text="{{ cliente.offerProduct }}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">126,128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5100796254471958859" datatype="html">
+        <source>Email: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.email }}"/></source>
+        <target>Email: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.email }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">131,132</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="229506831420154898" datatype="html">
+        <source> Teléfono: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.phone | formatoTelefono }}"/> </source>
+        <target> Phone Number: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.phone | formatoTelefono }}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
+          <context context-type="linenumber">133,135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3024422720051450179" datatype="html">
+        <source>Bienvenido a tu área personal</source>
+        <target>Welcome to your personal area</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3884248320379900316" datatype="html">
+        <source>¡Gracias a ti más personas pueden disfrutar de una vida más segura!</source>
+        <target>Thanks to you, more people can enjoy a safer life!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/home/home.component.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1926157928707021468" datatype="html">
+        <source>Inicio</source>
+        <target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3780419628908920061" datatype="html">
+        <source> Mi Perfil </source>
+        <target> My Profile </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5797087197643200257" datatype="html">
+        <source>Perfil</source>
+        <target>Profile</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7561060183100598492" datatype="html">
+        <source>Salir</source>
+        <target>Exit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="846922943334656691" datatype="html">
+        <source> Idioma </source>
+        <target> Language </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
