@@ -22,16 +22,25 @@
 .todo {
   margin: 15px;
   margin-top: 25px;
-}
 
-h3 {
-  margin: 15px;
-}
+  table {
+    width: 100%;
+    border-collapse: separate; /* Esto hace que las celdas estén separadas */
+    border-spacing: 0 15px; /* Espacio vertical entre las filas */
+    margin-top: 20px;
+    background-color: transparent; /* Fondo transparente para la tabla */
 
-// No pilla los márgenes. Con el F12 se ve que los aplica pero no los muestra. La tabla está como "superpuesta" o nose.
-tr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+    tr {
+      border-radius: 15px; /* Border radius para las filas */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+      background-color: transparent; /* Fondo transparente para las filas */
+
+      td {
+        padding: 15px; /* Padding para las celdas */
+        background-color: transparent; /* Fondo transparente para las celdas */
+      }
+    }
+  }
 }
 
 .vertodas {
@@ -41,13 +50,14 @@ tr {
   background-color: $primary25;
   width: 7%;
   border: 0.7px solid $light;
-  border-radius: 20px;
+  border-radius: 8px;
   &:hover {
     background-color: $light;
     border: 0.7px solid $primary;
     color: $text;
     text-align: center;
-    padding: 5px;
+    padding: 10px, 16px, 10px, 16px;
+    gap: 10px;
     margin: 15px;
   }
 }
@@ -61,6 +71,10 @@ a {
 .card {
   background-color: #ffffff;
   color: #1a202c;
+  display: inline-block; /* Cambio de display */
+  margin-bottom: 20px; /* Margen entre tarjetas */
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
@@ -70,6 +84,12 @@ a {
 .clientesPotenciales {
   padding: 15px;
   margin-top: -15px;
+
+  .card {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .nombre {
@@ -85,7 +105,11 @@ a {
   color: $primary50;
 }
 
+.infos {
+  margin-right: 24px;
+}
+
 .infoss {
+  margin: 0;
   color: $primary;
-  padding: 15px;
 }

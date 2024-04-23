@@ -60,7 +60,7 @@ export class HomeComponent {
   }
 
   private actualizarClientes() {
-    this.clipot = this.clientesPotService.clipot.slice(0, 2);
+    this.clipot = this.clientesPotService.clipot;
   }
 
   eliminarCliente(index: number) {
