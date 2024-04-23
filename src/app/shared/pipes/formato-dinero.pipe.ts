@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'formatoDinero',
-  standalone: true,
+  standalone: false,
 })
 export class FormatoDineroPipe implements PipeTransform {
   transform(value: any, args?: any): any {

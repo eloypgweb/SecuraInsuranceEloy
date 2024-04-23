@@ -18,13 +18,13 @@
       <!-- No. de póliza Column -->
       <ng-container matColumnDef="nPolicy">
         <th mat-header-cell *matHeaderCellDef i18n>No. de póliza</th>
-        <td mat-cell *matCellDef="let element" i18n>{{ detalles1.nPolicy }}</td>
+        <td mat-cell *matCellDef="let element">{{ detalles1.nPolicy }}</td>
       </ng-container>
 
       <!-- Nombre del riesgo Column -->
       <ng-container matColumnDef="riskName">
         <th mat-header-cell *matHeaderCellDef i18n>Nombre del riesgo</th>
-        <td mat-cell *matCellDef="let element" i18n>
+        <td mat-cell *matCellDef="let element">
           {{ detalles1.riskName }}
         </td>
       </ng-container>
@@ -32,7 +32,7 @@
       <!-- Fecha de contrato Column -->
       <ng-container matColumnDef="startDate">
         <th mat-header-cell *matHeaderCellDef i18n>Fecha de contrato</th>
-        <td mat-cell *matCellDef="let element" i18n>
+        <td mat-cell *matCellDef="let element">
           {{ element.startDate | formatoFecha }}
         </td>
       </ng-container>
@@ -40,7 +40,7 @@
       <!-- Fecha de vencimiento Column -->
       <ng-container matColumnDef="endDate">
         <th mat-header-cell *matHeaderCellDef i18n>Fecha de vencimiento</th>
-        <td mat-cell *matCellDef="let element" i18n>
+        <td mat-cell *matCellDef="let element">
           {{ element.endDate | formatoFecha }}
         </td>
       </ng-container>
@@ -48,7 +48,7 @@
       <!-- Importe Column -->
       <ng-container matColumnDef="amount">
         <th mat-header-cell *matHeaderCellDef i18n>Importe</th>
-        <td mat-cell *matCellDef="let element" i18n>
+        <td mat-cell *matCellDef="let element">
           {{ element.amount | formatoDinero }}
         </td>
       </ng-container>
@@ -56,7 +56,7 @@
       <!-- Estado de la póliza Column -->
       <ng-container matColumnDef="state">
         <th mat-header-cell *matHeaderCellDef i18n>Estado de la póliza</th>
-        <td mat-cell *matCellDef="let element" i18n>
+        <td mat-cell *matCellDef="let element">
           <div
             [ngClass]="
               element.state === 'pagada'

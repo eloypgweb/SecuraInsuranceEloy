@@ -8,28 +8,12 @@
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
           <context context-type="linenumber">3,4</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">21,22</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">35,36</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">41,42</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="7708270344948043036" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ subtitulillo }}"/> </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
           <context context-type="linenumber">5,7</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">28,30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5817002699361605941" datatype="html">
@@ -68,84 +52,63 @@
         <source>Fecha de vencimiento</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">42,43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1881314525617287984" datatype="html">
         <source>Importe</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">46,47</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="371038103554932480" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ element.amount }}"/> €</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">47,48</context>
+          <context context-type="linenumber">50,51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="779345199951458721" datatype="html">
         <source>Estado de la póliza</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">52,53</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5605687000233984435" datatype="html">
-        <source><x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div
-            [ngClass]=&quot;
-              element.state === &apos;pagada&apos;
-                ? &apos;bg-green-100 text-green-700&apos;
-                : &apos;bg-yellow-100 text-gray-600&apos;
-            &quot;
-            class=&quot;rounded-lg p-1 inline-block&quot;
-          &gt;"/><x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container *ngIf=&quot;element.state === &apos;pagada&apos;; else pendiente&quot;&gt;"/><x id="START_TAG_NG_ICON" ctype="x-ng_icon" equiv-text="&lt;ng-icon class=&quot;mr-2&quot; name=&quot;bootstrapCheck2&quot;&gt;"/><x id="CLOSE_TAG_NG_ICON" ctype="x-ng_icon" equiv-text="&lt;/ng-icon&gt;"/> Pagada <x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container&gt;"/><x id="START_TAG_NG_TEMPLATE" ctype="x-ng_template" equiv-text="&lt;ng-template #pendiente&gt;"/><x id="START_TAG_NG_ICON_1" ctype="x-ng_icon_1" equiv-text="&lt;ng-icon class=&quot;mr-2&quot; name=&quot;bootstrapClock&quot;&gt;"/><x id="CLOSE_TAG_NG_ICON" ctype="x-ng_icon" equiv-text="&lt;/ng-icon&gt;"/> Pendiente <x id="CLOSE_TAG_NG_TEMPLATE" ctype="x-ng_template" equiv-text="&lt;/ng-template&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">55,72</context>
+          <context context-type="linenumber">58,59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7753413853351015529" datatype="html">
         <source>Ver todas</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">104,105</context>
+          <context context-type="linenumber">110,111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4382557783829966528" datatype="html">
         <source>Clientes Potenciales</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">108,109</context>
+          <context context-type="linenumber">114,115</context>
         </context-group>
       </trans-unit>
       <trans-unit id="521952543941236208" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.name }}"/> <x id="INTERPOLATION_1" equiv-text="{{ cliente.personalData.surname }}"/> </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">114,116</context>
+          <context context-type="linenumber">120,122</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2073689515078568313" datatype="html">
         <source> Producto a ofrecer: <x id="INTERPOLATION" equiv-text="{{ cliente.offerProduct }}"/> </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">126,128</context>
+          <context context-type="linenumber">132,134</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5100796254471958859" datatype="html">
         <source>Email: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.email }}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">131,132</context>
+          <context context-type="linenumber">137,138</context>
         </context-group>
       </trans-unit>
       <trans-unit id="229506831420154898" datatype="html">
         <source> Teléfono: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.phone | formatoTelefono }}"/> </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">133,135</context>
+          <context context-type="linenumber">139,141</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3024422720051450179" datatype="html">

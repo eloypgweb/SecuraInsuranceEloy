@@ -5,7 +5,7 @@
   "projects": {
     "SecuraInsuranceEloy": {
       "i18n": {
-        "sourceLocale": "es-ES",
+        "sourceLocale": "es",
         "locales": {
           "en-US": "src/locale/messages.en.xlf"
         }
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["es-ES"],
+            "localize": ["es"],
             "outputPath": "dist/secura-insurance-eloy",
             "index": "src/index.html",
             "browser": "src/main.ts",

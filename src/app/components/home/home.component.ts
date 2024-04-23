@@ -12,11 +12,9 @@ import { featherAirplay } from '@ng-icons/feather-icons';
 import { bootstrapTrash } from '@ng-icons/bootstrap-icons';
 import { bootstrapClock } from '@ng-icons/bootstrap-icons';
 import { bootstrapCheck2 } from '@ng-icons/bootstrap-icons';
+import { MispipesModule } from '../../shared/pipes/mispipes.module';
 
-// pipes
-import { FormatoTelefonoPipe } from '../../pipes/formato-telefono-pipe.pipe';
-import { FormatoFechaPipe } from '../../pipes/formato-fecha.pipe';
-import { FormatoDineroPipe } from '../../pipes/formato-dinero.pipe';
+// Mis pipes
 
 @Component({
   selector: 'app-home',
@@ -29,9 +27,7 @@ import { FormatoDineroPipe } from '../../pipes/formato-dinero.pipe';
     RouterLink,
     MatTableModule,
     MatIconModule,
-    FormatoTelefonoPipe,
-    FormatoFechaPipe,
-    FormatoDineroPipe,
+    MispipesModule,
   ],
   viewProviders: [
     provideIcons({

@@ -8,28 +8,12 @@
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
           <context context-type="linenumber">3,4</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">21,22</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">35,36</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">41,42</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="7708270344948043036" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ subtitulillo }}"/> </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
           <context context-type="linenumber">5,7</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">28,30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5817002699361605941" datatype="html">
@@ -70,10 +54,10 @@
       </trans-unit>
       <trans-unit id="4683614117782128648" datatype="html">
         <source>Fecha de vencimiento</source>
-        <target>Due date</target>
+        <target>Expiration date</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">40,41</context>
+          <context context-type="linenumber">42,43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1881314525617287984" datatype="html">
@@ -81,7 +65,7 @@
         <target>Amount</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">46,47</context>
+          <context context-type="linenumber">50,51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="779345199951458721" datatype="html">
@@ -89,7 +73,7 @@
         <target>Policy status</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">52,53</context>
+          <context context-type="linenumber">58,59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7753413853351015529" datatype="html">
@@ -97,7 +81,7 @@
         <target>See all</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">104,105</context>
+          <context context-type="linenumber">110,111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4382557783829966528" datatype="html">
@@ -105,15 +89,15 @@
         <target>Potential customers</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">108,109</context>
+          <context context-type="linenumber">114,115</context>
         </context-group>
       </trans-unit>
       <trans-unit id="521952543941236208" datatype="html">
         <source> <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.name }}"/> <x id="INTERPOLATION_1" equiv-text="{{ cliente.personalData.surname }}"/> </source>
-        <target><x id="INTERPOLATION" equiv-text="{{ cliente.personalData.name }}"/> <x id="INTERPOLATION_1" equiv-text="{{ cliente.personalData.surname }}"/></target>
+        <target> <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.name }}"/> <x id="INTERPOLATION_1" equiv-text="{{ cliente.personalData.surname }}"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">114,116</context>
+          <context context-type="linenumber">120,122</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2073689515078568313" datatype="html">
@@ -121,7 +105,7 @@
         <target> Product to offer: <x id="INTERPOLATION" equiv-text="{{ cliente.offerProduct }}"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">126,128</context>
+          <context context-type="linenumber">132,134</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5100796254471958859" datatype="html">
@@ -129,15 +113,15 @@
         <target>Email: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.email }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">131,132</context>
+          <context context-type="linenumber">137,138</context>
         </context-group>
       </trans-unit>
       <trans-unit id="229506831420154898" datatype="html">
         <source> Teléfono: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.phone | formatoTelefono }}"/> </source>
-        <target> Phone Number: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.phone | formatoTelefono }}"/> </target>
+        <target> Phone: <x id="INTERPOLATION" equiv-text="{{ cliente.personalData.phone | formatoTelefono }}"/> </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.html</context>
-          <context context-type="linenumber">133,135</context>
+          <context context-type="linenumber">139,141</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3024422720051450179" datatype="html">
@@ -150,7 +134,7 @@
       </trans-unit>
       <trans-unit id="3884248320379900316" datatype="html">
         <source>¡Gracias a ti más personas pueden disfrutar de una vida más segura!</source>
-        <target>Thanks to you, more people can enjoy a safer life!</target>
+        <target>Thanks to you more people can enjoy a safer life!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/home/home.component.ts</context>
           <context context-type="linenumber">46</context>
