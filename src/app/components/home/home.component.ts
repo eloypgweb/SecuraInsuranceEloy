@@ -12,9 +12,9 @@ import { featherAirplay } from '@ng-icons/feather-icons';
 import { bootstrapTrash } from '@ng-icons/bootstrap-icons';
 import { bootstrapClock } from '@ng-icons/bootstrap-icons';
 import { bootstrapCheck2 } from '@ng-icons/bootstrap-icons';
-import { MispipesModule } from '../../shared/pipes/mispipes.module';
 
 // Mis pipes
+import { MispipesModule } from '../../shared/pipes/mispipes.module';
 
 @Component({
   selector: 'app-home',
