@@ -35,22 +35,22 @@
   }
 
   a {
-    color: $text !important;
+    color: $text;
 
     &:hover {
       background-color: $primary25;
-      color: $light;
+      color: $text;
       border: 0.8px solid $primary;
     }
   }
 
   button {
-    color: $text !important;
+    color: $text;
 
     &:hover {
-      background-color: $grey50;
-      color: $light;
-      text-decoration: underline;
+      background-color: $primary25;
+      color: $text;
+      border: 0.8px solid $primary;
     }
   }
 }
@@ -60,30 +60,7 @@
   margin: 5px;
 }
 
-.btnder {
+.dropdown {
   background-color: $light;
   color: $text;
-  border: 0.8px solid $light;
-  &:hover {
-    background-color: $primary25;
-    color: $light;
-    border: 0.8px solid $primary;
-    text-decoration: none;
-  }
-}
-
-.aaa {
-  color: $text !important;
-
-  &:hover {
-    background-color: $primary25 !important;
-    color: $light !important;
-    border: 0.8px solid $primary !important;
-    text-decoration: none !important;
-  }
-}
-
-.dropdown {
-  background-color: $light !important;
-  color: $text !important;
 }
