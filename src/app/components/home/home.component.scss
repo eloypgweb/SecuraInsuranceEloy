@@ -33,12 +33,16 @@
     tr {
       border-radius: 15px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: transparent;
 
       td {
         padding: 15px;
-        background-color: transparent;
       }
+    }
+
+    .arriba {
+      background-color: $light;
+      color: $subltleText;
+      box-shadow: none;
     }
   }
 
