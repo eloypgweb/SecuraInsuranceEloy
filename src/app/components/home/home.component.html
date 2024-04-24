@@ -10,15 +10,11 @@
 <div class="todo">
   <h3 class="mb-5" i18n>Próximas renovaciones</h3>
   <div>
-    <table
-      mat-table
-      [dataSource]="detalles1.instalments"
-      class="mat-elevation-z8"
-    >
+    <table mat-table [dataSource]="detalles1.instalments">
       <!-- No. de póliza Column -->
       <ng-container matColumnDef="nPolicy">
         <th mat-header-cell *matHeaderCellDef i18n>No. de póliza</th>
-        <td class="table-inf-cont" mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element">
           {{ detalles1.nPolicy }}
         </td>
       </ng-container>
@@ -26,7 +22,7 @@
       <!-- Nombre del riesgo Column -->
       <ng-container matColumnDef="riskName">
         <th mat-header-cell *matHeaderCellDef i18n>Nombre del riesgo</th>
-        <td class="table-inf-cont" mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element">
           {{ detalles1.riskName }}
         </td>
       </ng-container>
@@ -34,7 +30,7 @@
       <!-- Fecha de contrato Column -->
       <ng-container matColumnDef="startDate">
         <th mat-header-cell *matHeaderCellDef i18n>Fecha de contrato</th>
-        <td class="table-inf-cont" mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element">
           {{ element.startDate | formatoFecha }}
         </td>
       </ng-container>
@@ -42,7 +38,7 @@
       <!-- Fecha de vencimiento Column -->
       <ng-container matColumnDef="endDate">
         <th mat-header-cell *matHeaderCellDef i18n>Fecha de vencimiento</th>
-        <td class="table-inf-cont" mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element">
           {{ element.endDate | formatoFecha }}
         </td>
       </ng-container>
@@ -50,7 +46,7 @@
       <!-- Importe Column -->
       <ng-container matColumnDef="amount">
         <th mat-header-cell *matHeaderCellDef i18n>Importe</th>
-        <td class="table-inf-cont" mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element">
           {{ element.amount | formatoDinero }}
         </td>
       </ng-container>
@@ -58,7 +54,7 @@
       <!-- Estado de la póliza Column -->
       <ng-container matColumnDef="state">
         <th mat-header-cell *matHeaderCellDef i18n>Estado de la póliza</th>
-        <td class="table-inf-cont" mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element">
           <div
             [ngClass]="
               element.state === 'pagada'
@@ -113,7 +109,7 @@
 </div>
 
 <div>
-  <h3 class="mt-5" i18n>Clientes Potenciales</h3>
+  <h3 class="mt-5 mb-5 ml-4" i18n>Clientes Potenciales</h3>
   <div class="clientesPotenciales grid grid-cols-1 md:grid-cols-2 gap-4">
     <ng-container *ngFor="let cliente of clipot; let i = index">
       <div class="card p-6 shadow-lg rounded-lg border">

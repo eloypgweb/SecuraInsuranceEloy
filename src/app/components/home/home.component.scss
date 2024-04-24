@@ -20,27 +20,29 @@
 }
 
 .todo {
-  margin: 15px;
+  margin: 15px; /* Separo de los laterales y de arriba y abajo */
   margin-top: 25px;
 
   table {
     width: 100%;
-    border-collapse: separate; /* Esto hace que las celdas estén separadas */
-    border-spacing: 0 15px; /* Espacio vertical entre las filas */
+    border-collapse: separate;
+    border-spacing: 0 15px;
     margin-top: 20px;
-    background-color: transparent; /* Fondo transparente para la tabla */
+    background-color: transparent;
 
     tr {
-      border-radius: 15px; /* Border radius para las filas */
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-      background-color: transparent; /* Fondo transparente para las filas */
+      border-radius: 15px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: transparent;
 
       td {
-        padding: 15px; /* Padding para las celdas */
-        background-color: transparent; /* Fondo transparente para las celdas */
+        padding: 15px;
+        background-color: transparent;
       }
     }
   }
+
+  // Falta eliminar el borde de la tabla que separa las filas
 }
 
 .vertodas {
@@ -69,8 +71,8 @@ a {
 }
 
 .card {
-  background-color: #ffffff;
-  color: #1a202c;
+  background-color: $light;
+  color: $text;
   display: inline-block; /* Cambio de display */
   margin-bottom: 20px; /* Margen entre tarjetas */
   border-radius: 20px;
@@ -83,7 +85,7 @@ a {
 
 .clientesPotenciales {
   padding: 15px;
-  margin-top: -15px;
+  margin: 15px;
 
   .card {
     margin-bottom: 20px;
