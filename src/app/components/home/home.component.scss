@@ -1,7 +1,6 @@
 @import "../../../styles.scss";
 
 .welcome-section {
-  /* Estilos de la sección de bienvenida */
   font-family: "Roboto";
   height: 70vh;
   text-align: center;
@@ -11,16 +10,24 @@
   background-size: cover;
   background-position: center;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
-  background-blend-mode: multiply; /* Mezcla el color de fondo con la imagen de fondo */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  .titulillo {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    height: auto;
+    font: 64px "Roboto";
+    font-weight: bold;
+  }
 }
 
 .parrafos {
-  margin-top: 150px;
+  margin-top: 25px;
 }
 
 .todo {
-  margin: 15px; /* Separo de los laterales y de arriba y abajo */
+  margin: 15px;
   margin-top: 25px;
 
   table {
@@ -45,8 +52,6 @@
       box-shadow: none;
     }
   }
-
-  // Falta eliminar el borde de la tabla que separa las filas
 }
 
 .vertodas {
@@ -54,17 +59,14 @@
   padding: 5px;
   margin: 15px;
   background-color: $primary25;
-  width: 7%;
+  width: 100%; // Modificado
+  max-width: 200px; // Modificado
   border: 0.7px solid $light;
   border-radius: 8px;
   &:hover {
     background-color: $light;
     border: 0.7px solid $primary;
     color: $text;
-    text-align: center;
-    padding: 10px, 16px, 10px, 16px;
-    gap: 10px;
-    margin: 15px;
   }
 }
 
@@ -119,3 +121,22 @@ a {
   margin: 0;
   color: $primary;
 }
+
+// @media only screen and (max-width: 375px) {
+//   .welcome-section {
+//     height: auto;
+//     width: auto;
+//     .titulillo {
+//       width: 100%;
+//       height: 100%;
+//     }
+//   }
+
+//   .vertodas {
+//     width: 100%;
+//   }
+
+//   .clientesPotenciales {
+//     display: block;
+//   }
+// }
