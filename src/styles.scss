@@ -76,6 +76,11 @@ $subltleText: #191c3d;
 $ancent: #d8dbf5;
 $inverseText: #f7f7fc;
 
+// Aditionals
+$nav-footer-bg: #ffffff;
+$renovations-btn-bg: #eff3f5;
+$renovations-btn-txt: #405258;
+
 // Fonts
 body {
   margin: 0;
@@ -138,4 +143,6 @@ h3 {
 
 .iconos {
   color: $primary;
+  font-size: 20px;
+  margin-right: 5px;
 }

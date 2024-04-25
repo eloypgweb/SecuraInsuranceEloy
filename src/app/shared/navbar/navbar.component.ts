@@ -12,7 +12,13 @@ import { MatMenu, MatMenuModule } from '@angular/material/menu';
 
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { featherAirplay } from '@ng-icons/feather-icons';
-import { bootstrapCaretDownFill } from '@ng-icons/bootstrap-icons';
+import {
+  bootstrapCaretDownFill,
+  bootstrapPerson,
+  bootstrapPower,
+  bootstrapTelephone,
+  bootstrapLockFill,
+} from '@ng-icons/bootstrap-icons';
 
 interface Idioma {
   value: string;
@@ -40,7 +46,16 @@ interface Perfil {
     NgIconComponent,
     MatMenuModule,
   ],
-  viewProviders: [provideIcons({ featherAirplay, bootstrapCaretDownFill })],
+  viewProviders: [
+    provideIcons({
+      featherAirplay,
+      bootstrapCaretDownFill,
+      bootstrapPerson,
+      bootstrapPower,
+      bootstrapTelephone,
+      bootstrapLockFill,
+    }),
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',

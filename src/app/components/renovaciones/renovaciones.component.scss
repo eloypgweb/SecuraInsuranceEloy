@@ -1,0 +1,84 @@
+@import "../../../styles.scss";
+
+// todo esta dentro de .general-container
+.general-container {
+  .container-breadcrumbs {
+    border-bottom: 1px solid $grey25;
+    padding: 32px 88px 32px 88px;
+    gap: 40px;
+    width: 100%;
+    height: 159px;
+
+    .breadcrumb {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+
+      .breadcrumb-item {
+        color: #999;
+        a {
+          text-decoration: none;
+          color: $primary;
+        }
+
+        &::after {
+          content: "/";
+          margin: 0 10px;
+        }
+
+        &:last-child::after {
+          content: "";
+        }
+
+        &.active a {
+          color: #999;
+          pointer-events: none;
+          cursor: default;
+        }
+      }
+    }
+
+    .renovations-policies {
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .renovations {
+      flex-grow: 1;
+    }
+
+    .policies {
+      background-color: $renovations-btn-bg; /* Color de fondo gris */
+      color: $renovations-btn-txt; /* Color del texto gris */
+      padding: 8px 12px 8px 12px; /* Espaciado interno */
+      border-radius: 8px; /* Forma circular */
+      gap: 12px; /* Espaciado entre elementos */
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .table-zone {
+    padding: 40px 24px 80px 24px;
+    gap: 40px;
+
+    .filter-btn {
+      .btn {
+        width: fit-content;
+        padding: 10px 16px 10px 16px;
+        gap: 10px;
+        border: 1px solid $primary;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    // .number-policies-order {.number-policies {} .order {}}
+
+    // .table {}
+  }
+}

@@ -5,9 +5,13 @@
 }
 
 .navbar {
-  background-color: $light;
+  background-color: $nav-footer-bg;
   color: $text;
-  padding: 10px;
+  padding: 16px 88px 16px 88px;
+  width: fixed(1440px);
+  height: hug(96px);
+  border-bottom: 1px solid $grey25;
+  justify-content: space-between;
 
   .navbar-logo {
     height: 40px;
@@ -58,9 +62,15 @@
 .cosas {
   cursor: pointer;
   margin: 5px;
+  // padding: 20px;
 }
 
 .dropdown {
   background-color: $light;
   color: $text;
+}
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }

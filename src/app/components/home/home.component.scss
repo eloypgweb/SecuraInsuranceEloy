@@ -54,15 +54,22 @@
   }
 }
 
+.flag {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 2px 8px 2px 8px;
+}
+
 .vertodas {
   text-align: center;
-  padding: 5px;
+  padding: 10px 16px 10px 16px;
   margin: 15px;
   background-color: $primary25;
-  width: 100%; // Modificado
-  max-width: 200px; // Modificado
+  width: fit-content;
   border: 0.7px solid $light;
   border-radius: 8px;
+  gap: 10px;
   &:hover {
     background-color: $light;
     border: 0.7px solid $primary;
@@ -122,21 +129,6 @@ a {
   color: $primary;
 }
 
-// @media only screen and (max-width: 375px) {
-//   .welcome-section {
-//     height: auto;
-//     width: auto;
-//     .titulillo {
-//       width: 100%;
-//       height: 100%;
-//     }
-//   }
-
-//   .vertodas {
-//     width: 100%;
-//   }
-
-//   .clientesPotenciales {
-//     display: block;
-//   }
-// }
+// Hacer siempre movile first
+// reso peq -> reso grande
+// min width

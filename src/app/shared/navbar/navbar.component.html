@@ -11,22 +11,60 @@
 
     <div class="cosas">
       <button class="aaa" mat-button [matMenuTriggerFor]="profile">
-        <mat-icon>account_circle</mat-icon><span i18n> Mi Perfil </span
-        ><ng-icon class="mat-icon" name="bootstrapCaretDownFill"></ng-icon>
+        <mat-icon class="iconos">account_circle</mat-icon
+        ><span i18n> Mi Perfil </span>
+        <ng-icon class="mat-icon" name="bootstrapCaretDownFill"></ng-icon>
       </button>
       <mat-menu class="dropdown" #profile="matMenu">
-        <button mat-menu-item i18n>Perfil</button>
-        <button mat-menu-item i18n>Salir</button>
+        <div class="dropdown-container">
+          <span
+            ><strong i18n>Mi Perfil</strong>
+            <br />
+            <p i18n>
+              En este espacio puedes acceder, modificar, gestionar y consultar
+              todo lo relacionado con tus servicios de energía. Fácil y rápido.
+            </p></span
+          >
+        </div>
+
+        <!-- Mis datos personales -->
+        <button mat-menu-item>
+          <div class="dropdown-container">
+            <ng-icon class="iconos" name="bootstrapPerson"></ng-icon>
+            <span i18n>Mis datos personales</span>
+          </div>
+        </button>
+        <!-- Mi contraseña -->
+        <button mat-menu-item>
+          <div class="dropdown-container">
+            <ng-icon class="iconos" name="bootstrapLockFill"></ng-icon>
+            <span i18n>Mi contraseña</span>
+          </div>
+        </button>
+        <!-- Contacto -->
+        <button mat-menu-item>
+          <div class="dropdown-container">
+            <ng-icon class="iconos" name="bootstrapTelephone"></ng-icon>
+            <span i18n>Contacto</span>
+          </div>
+        </button>
+        <!-- Cerrar sesión -->
+        <button mat-menu-item>
+          <div class="dropdown-container">
+            <ng-icon class="iconos" name="bootstrapPower"></ng-icon>
+            <span i18n>Cerrar Sesión</span>
+          </div>
+        </button>
       </mat-menu>
     </div>
     <div class="cosas">
       <button class="aaa" mat-button [matMenuTriggerFor]="language">
-        <mat-icon>language</mat-icon><span i18n> Idioma </span
+        <mat-icon class="iconos">language</mat-icon><span i18n> Idioma </span
         ><ng-icon class="mat-icon" name="bootstrapCaretDownFill"></ng-icon>
       </button>
       <mat-menu #language="matMenu" class="dropdown">
-        <button mat-menu-item>Español</button>
-        <button mat-menu-item>English</button>
+        <button mat-menu-item class="p-2" i18n>Español</button>
+        <button mat-menu-item class="p-2" i18n>Inglés</button>
       </mat-menu>
     </div>
   </mat-toolbar-row>
