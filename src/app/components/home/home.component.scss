@@ -1,132 +1,264 @@
 @import "../../../styles.scss";
 
-.welcome-section {
-  font-family: "Roboto";
-  height: 70vh;
-  text-align: center;
-  padding: 100px 20px;
-  position: relative;
-  background-image: url("../../../assets/welcome-img.webp");
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: multiply;
-  .titulillo {
-    width: 80%;
-    margin: 0 auto;
+/* Media query para dispositivos MOBILE */
+@media (max-width: 767px) {
+  /* Estilos para dispositivos MOBILE */
+
+  /* Welcome section */
+  .welcome-section {
+    height: auto; /* Altura automática para ajustarse al contenido */
+    padding: 60px 20px;
     text-align: center;
-    height: auto;
-    font: 64px "Roboto";
-    font-weight: bold;
-  }
-}
-
-.parrafos {
-  margin-top: 25px;
-}
-
-.todo {
-  margin: 15px;
-  margin-top: 25px;
-
-  table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 15px;
-    margin-top: 20px;
-    background-color: transparent;
-
-    tr {
-      border-radius: 15px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-
-      td {
-        padding: 15px;
+    background-image: url("../../../assets/welcome-img.webp"); /* Restaurar imagen de fondo en dispositivos móviles */
+    background-size: cover; /* Ajustar tamaño de la imagen al contenedor sin distorsionarla */
+    background-repeat: no-repeat; /* Evitar repetición de la imagen */
+    background-attachment: fixed; /* Fijar la imagen de fondo */
+    background-position: center; /* Posicionar la imagen en el centro */
+    color: #fff; /* Color de texto alternativo */
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    .parrafos {
+      margin-top: 15px; /* Ajustar margen superior */
+      .titulillo {
+        font-size: 36px;
       }
     }
+  }
 
-    .arriba {
-      background-color: $light;
-      color: $subltleText;
-      box-shadow: none;
+  /* Tabla */
+  .todo table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .todo table tr {
+    display: block;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  .todo table td {
+    display: block;
+    padding: 10px;
+  }
+
+  /* Botón "Ver todas" */
+  .vertodas {
+    padding: 6px 12px;
+    margin: 10px;
+    font-size: 12px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color de texto del botón */
+    border-radius: 5px; /* Borde redondeado del botón */
+    display: inline-block; /* Alinear el botón en línea */
+    text-decoration: none; /* Eliminar subrayado del botón */
+  }
+
+  /* Tarjetas */
+  .card {
+    font-size: 14px;
+    margin-bottom: 10px;
+    background-color: #fff; /* Color de fondo de la tarjeta */
+    border: 1px solid #ccc; /* Borde de la tarjeta */
+    border-radius: 10px; /* Borde redondeado de la tarjeta */
+    padding: 10px; /* Espaciado interno de la tarjeta */
+  }
+
+  .nombre {
+    font-size: 18px;
+  }
+
+  .praof {
+    margin-bottom: 5px;
+  }
+}
+
+/* Media query para TABLETS */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Estilos para TABLETS */
+
+  /* Welcome section */
+  .welcome-section {
+    align-items: center;
+    text-align: center;
+    .parrafos {
+      margin-top: 25%;
+      .titulillo {
+        font-size: 48px;
+      }
     }
   }
-}
 
-.flag {
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  padding: 2px 8px 2px 8px;
-}
+  .todo {
+    margin: 10px;
+    margin-top: 20px;
 
-.vertodas {
-  text-align: center;
-  padding: 10px 16px 10px 16px;
-  margin: 15px;
-  background-color: $primary25;
-  width: fit-content;
-  border: 0.7px solid $light;
-  border-radius: 8px;
-  gap: 10px;
-  &:hover {
-    background-color: $light;
-    border: 0.7px solid $primary;
-    color: $text;
+    table {
+      border-spacing: 0 10px;
+
+      tr {
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .vertodas {
+    padding: 8px 14px;
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .card {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .nombre {
+    font-size: 20px;
+  }
+
+  .praof {
+    margin-bottom: 5px;
   }
 }
 
-a {
-  color: $text;
-  width: 100%;
-  height: 100%;
-}
+/* Media query para dispositivos DESKTOP */
+@media (min-width: 768px) {
+  /* Estilos para dispositivos DESKTOP */
 
-.card {
-  background-color: $light;
-  color: $text;
-  display: inline-block; /* Cambio de display */
-  margin-bottom: 20px; /* Margen entre tarjetas */
-  border-radius: 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
+  /* Welcome section */
+  .welcome-section {
+    font-family: "Roboto";
+    height: 70vh;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    background-image: url("../../../assets/welcome-img.webp");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    .titulillo {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      height: auto;
+      font: 64px "Roboto";
+      font-weight: bold;
+    }
+  }
 
-.card:hover {
-  background-color: #edf2f7;
-}
+  .parrafos {
+    margin-top: 25px;
+  }
 
-.clientesPotenciales {
-  padding: 15px;
-  margin: 15px;
+  .todo {
+    margin: 15px;
+    margin-top: 25px;
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 15px;
+      margin-top: 20px;
+      background-color: transparent;
+
+      tr {
+        border-radius: 15px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+        td {
+          padding: 15px;
+        }
+      }
+
+      .arriba {
+        background-color: $light;
+        color: $subltleText;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .flag {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 2px 8px 2px 8px;
+  }
+
+  .vertodas {
+    text-align: center;
+    padding: 10px 16px 10px 16px;
+    margin: 15px;
+    background-color: $primary25;
+    width: fit-content;
+    border: 0.7px solid $light;
+    border-radius: 8px;
+    gap: 10px;
+    &:hover {
+      background-color: $light;
+      border: 0.7px solid $primary;
+      color: $text;
+    }
+  }
+
+  a {
+    color: $text;
+    width: 100%;
+    height: 100%;
+  }
 
   .card {
-    margin-bottom: 20px;
+    background-color: $light;
+    color: $text;
+    display: inline-block; /* Cambio de display */
+    margin-bottom: 20px; /* Margen entre tarjetas */
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
-}
 
-.nombre {
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  font-size: 24px;
-  letter-spacing: 0%;
-}
+  .card:hover {
+    background-color: #edf2f7;
+  }
 
-.praof {
-  margin-top: -15px;
-  margin-bottom: 10px;
-  color: $primary50;
-}
+  .clientesPotenciales {
+    padding: 15px;
+    margin: 15px;
 
-.infos {
-  margin-right: 24px;
-}
+    .card {
+      margin-bottom: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
 
-.infoss {
-  margin: 0;
-  color: $primary;
+  .nombre {
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+    letter-spacing: 0%;
+  }
+
+  .praof {
+    margin-top: -15px;
+    margin-bottom: 10px;
+    color: $primary50;
+  }
+
+  .infos {
+    margin-right: 24px;
+  }
+
+  .infoss {
+    margin: 0;
+    color: $primary;
+  }
 }
 
 // Hacer siempre movile first

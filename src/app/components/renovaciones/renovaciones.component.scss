@@ -74,6 +74,12 @@
         border-radius: 8px;
         display: flex;
         align-items: center;
+        &:hover {
+          background-color: $primary25;
+          color: $renovations-btn-txt;
+          border: 1px solid $primary25;
+          border-radius: 8px;
+        }
       }
     }
 
