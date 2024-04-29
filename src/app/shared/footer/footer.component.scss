@@ -7,25 +7,6 @@
   margin-top: 20px;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.contact-info,
-.company-info,
-.refers {
-  flex: 1;
-}
-
-.contact-info h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: $primary;
-}
-
 .contact-info p,
 .company-info p {
   margin: 0;
@@ -35,28 +16,129 @@
   letter-spacing: 0%;
 }
 
-.contact-info a,
-.company-info a {
-  color: #333; /* Color de enlace */
+.icon-text {
+  display: flex; /* Utilizar display flex para alinear los elementos */
+  align-items: center; /* Alinear verticalmente los elementos */
 }
 
-.company-info {
-  text-align: right;
-  margin-top: 20px;
+.icon-text .iconos {
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+/* Media query para dispositivos MOBILE */
+@media (max-width: 767px) {
+  .footer-content {
+    max-width: 100%; /* Utilizar todo el ancho disponible */
+    margin: 0 auto; /* Centrar el contenido */
+    justify-content: left;
+  }
+
+  .contact-info h3 {
+    font-size: 14px; /* Reducir el tamaño del título */
+    margin-bottom: 6px; /* Ajustar el margen inferior */
+  }
+
+  .contact-info p,
+  .company-info p {
+    font-size: 12px; /* Reducir el tamaño del texto */
+  }
+
+  .company-info {
+    margin-top: 8px; /* Ajustar el margen superior */
+  }
+
+  .refers,
+  .copyright {
+    margin-top: 8px; /* Ajustar el margen superior */
+    font-size: 10px; /* Reducir el tamaño del texto */
+    display: block; /* Cambiar a display block */
+  }
+
+  .refers {
+    width: 100%; /* Utilizar todo el ancho disponible */
+    margin-bottom: 8px; /* Ajustar el margen inferior */
+  }
 }
 
-.refers,
-.copyright {
-  margin-top: 20px;
-  font-size: 10px;
+/* Media query para TABLETS */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer {
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .footer-content {
+    max-width: 800px;
+  }
+
+  .contact-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .contact-info p,
+  .company-info p {
+    font-size: 14px;
+  }
+
+  .company-info {
+    margin-top: 10px;
+  }
+
+  .refers,
+  .copyright {
+    margin-top: 10px;
+    font-size: 8px;
+  }
+
+  .refers {
+    width: 40%;
+  }
 }
 
-.refers {
-  display: flex;
-  justify-content: space-between;
-  width: 50%;
-}
+/* Media query para dispositivos DESKTOP */
+@media (min-width: 768px) {
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-.iconos {
-  color: $primary;
+  .contact-info,
+  .company-info,
+  .refers {
+    flex: 1;
+  }
+
+  .contact-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: $primary;
+  }
+
+  .contact-info a,
+  .company-info a {
+    color: #333; /* Color de enlace */
+  }
+
+  .company-info {
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .refers,
+  .copyright {
+    margin-top: 20px;
+    font-size: 10px;
+  }
+
+  .refers {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+  }
+
+  .iconos {
+    color: $primary;
+  }
 }

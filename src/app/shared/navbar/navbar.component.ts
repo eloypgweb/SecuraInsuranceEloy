@@ -19,6 +19,7 @@ import {
   bootstrapTelephone,
   bootstrapLockFill,
 } from '@ng-icons/bootstrap-icons';
+import { NgIf } from '@angular/common';
 
 interface Idioma {
   value: string;
@@ -33,6 +34,7 @@ interface Perfil {
   selector: 'app-navbar',
   standalone: true,
   imports: [
+    NgIf,
     RouterLink,
     MatToolbarModule,
     MatButtonModule,
