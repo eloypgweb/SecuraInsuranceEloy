@@ -1,17 +1,20 @@
+// De Angular
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Detalles1Service } from '../../services/detalles1.service';
-
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
-import { ClientesPotencialesService } from '../../services/clientes-potenciales.service';
 import { MatIconModule } from '@angular/material/icon';
 
+// Iconos
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { featherAirplay } from '@ng-icons/feather-icons';
 import { bootstrapTrash } from '@ng-icons/bootstrap-icons';
 import { bootstrapClock } from '@ng-icons/bootstrap-icons';
 import { bootstrapCheck2 } from '@ng-icons/bootstrap-icons';
+
+// Services
+import { ClientesPotencialesService } from '../../services/clientes-potenciales.service';
+import { Detalles1Service } from '../../services/detalles1.service';
 
 // Mis pipes
 import { MispipesModule } from '../../shared/pipes/mispipes.module';

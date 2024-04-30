@@ -29,6 +29,51 @@
       <div class="number-policies"></div>
       <div class="order"></div>
     </div>
-    <div class="table"></div>
+    <div class="table">
+      <mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="nPolicy">
+          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
+            >No. de póliza</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row">{{ row.nPolicy }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="riskName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
+            >Nombre del riesgo</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row">{{ row.riskName }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="contractDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
+            >Fecha de contrato</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row">{{ row.contractDate }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="expirationDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
+            >Fecha de vencimiento</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row">{{ row.expirationDate }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="amount">
+          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
+            >Importe</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row">{{ row.amount }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="state">
+          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
+            >Estado de la póliza</mat-header-cell
+          >
+          <mat-cell *matCellDef="let row">{{ row.state }}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      </mat-table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10]"
+        showFirstLastButtons
+      ></mat-paginator>
+    </div>
   </div>
 </div>
