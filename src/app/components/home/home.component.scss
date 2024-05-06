@@ -139,7 +139,10 @@
     align-items: center;
     text-align: center;
     .parrafos {
-      margin-top: 25%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       .titulillo {
         font-size: 48px;
       }
@@ -190,7 +193,7 @@
     font-family: "Roboto";
     height: 70vh;
     text-align: center;
-    padding: 100px 20px;
+    // padding: 100px 20px;
     position: relative;
     background-image: url("../../../assets/welcome-img.webp");
     background-size: cover;
@@ -209,7 +212,10 @@
   }
 
   .parrafos {
-    margin-top: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .todo {
