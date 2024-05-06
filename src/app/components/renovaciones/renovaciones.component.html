@@ -30,50 +30,126 @@
       <div class="order"></div>
     </div>
     <div class="table">
-      <mat-table [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="nPolicy">
-          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
-            >No. de póliza</mat-header-cell
-          >
-          <mat-cell *matCellDef="let row">{{ row.nPolicy }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="riskName">
-          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
-            >Nombre del riesgo</mat-header-cell
-          >
-          <mat-cell *matCellDef="let row">{{ row.riskName }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="contractDate">
-          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
-            >Fecha de contrato</mat-header-cell
-          >
-          <mat-cell *matCellDef="let row">{{ row.contractDate }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="expirationDate">
-          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
-            >Fecha de vencimiento</mat-header-cell
-          >
-          <mat-cell *matCellDef="let row">{{ row.expirationDate }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="amount">
-          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
-            >Importe</mat-header-cell
-          >
-          <mat-cell *matCellDef="let row">{{ row.amount }}</mat-cell>
-        </ng-container>
-        <ng-container matColumnDef="state">
-          <mat-header-cell *matHeaderCellDef mat-sort-header i18n
-            >Estado de la póliza</mat-header-cell
-          >
-          <mat-cell *matCellDef="let row">{{ row.state }}</mat-cell>
-        </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-      </mat-table>
-      <mat-paginator
-        [pageSizeOptions]="[5, 10]"
-        showFirstLastButtons
-      ></mat-paginator>
+      <div>
+        <table mat-table [dataSource]="dataSource" matSort>
+          <!-- Nº poliza -->
+          <ng-container matColumnDef="nPolicy">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header i18n>
+              No. de póliza
+            </th>
+            <td mat-cell *matCellDef="let row">{{ row.nPolicy }}</td>
+          </ng-container>
+
+          <!-- Nombre Riesgo -->
+          <ng-container matColumnDef="riskName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header i18n>
+              Nombre del riesgo
+            </th>
+            <td mat-cell *matCellDef="let row">{{ row.riskName }}</td>
+          </ng-container>
+
+          <!-- Fecha Contrato -->
+          <ng-container matColumnDef="contractDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header i18n>
+              Fecha de contrato
+            </th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.contractDate | formatoFecha }}
+            </td>
+          </ng-container>
+
+          <!-- Fecha Vencimiento -->
+          <ng-container matColumnDef="expirationDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header i18n>
+              Fecha de vencimiento
+            </th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.expirationDate | formatoFecha }}
+            </td>
+          </ng-container>
+
+          <!-- Importe -->
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header i18n>
+              Importe
+            </th>
+            <td mat-cell *matCellDef="let row">
+              <strong>{{ row.amount | formatoDinero }}</strong>
+            </td>
+          </ng-container>
+
+          <!-- Estado póliza -->
+          <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header i18n>
+              Estado de la póliza
+            </th>
+            <td mat-cell *matCellDef="let row">
+              <div
+                [ngClass]="
+                  row.state === 'pagada'
+                    ? 'bg-green-100 text-green-700'
+                    : row.state === 'vencida'
+                    ? 'bg-red-100 text-red-700'
+                    : 'bg-yellow-100 text-gray-600'
+                "
+                class="flag rounded-lg inline-block"
+              >
+                <ng-container *ngIf="row.state === 'pagada'; else pendiente">
+                  <ng-icon class="mr-2" name="bootstrapCheck2"></ng-icon>
+                  Pagada
+                </ng-container>
+                <ng-template #pendiente>
+                  <ng-container *ngIf="row.state === 'pendiente'; else vencida">
+                    <ng-icon class="mr-2" name="bootstrapClock"></ng-icon>
+                    Pendiente
+                  </ng-container>
+                  <ng-template #vencida>
+                    <ng-icon class="mr-2" name="bootstrapXLg"></ng-icon>
+                    Vencida
+                  </ng-template>
+                </ng-template>
+              </div>
+            </td>
+          </ng-container>
+
+          <!-- MatHeaderRow -->
+          <tr
+            class="arriba"
+            mat-header-row
+            *matHeaderRowDef="[
+              'nPolicy',
+              'riskName',
+              'contractDate',
+              'expirationDate',
+              'amount',
+              'state'
+            ]"
+          ></tr>
+          <tr
+            class="abajo"
+            mat-row
+            *matRowDef="
+              let row;
+              columns: [
+                'nPolicy',
+                'riskName',
+                'contractDate',
+                'expirationDate',
+                'amount',
+                'state'
+              ]
+            "
+          ></tr>
+        </table>
+
+        <!-- Paginator -->
+        <div class="paginator">
+          <mat-paginator
+            [pageSizeOptions]="[5, 10]"
+            showFirstLastButtons
+          ></mat-paginator>
+        </div>
+      </div>
     </div>
   </div>
 </div>

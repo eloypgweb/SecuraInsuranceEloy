@@ -13,14 +13,20 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 // Iconos
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 import { featherAirplay } from '@ng-icons/feather-icons';
-import { bootstrapFileEarmark } from '@ng-icons/bootstrap-icons';
-import { bootstrapSliders } from '@ng-icons/bootstrap-icons';
+import {
+  bootstrapFileEarmark,
+  bootstrapSliders,
+  bootstrapClock,
+  bootstrapCheck2,
+  bootstrapXLg,
+} from '@ng-icons/bootstrap-icons';
 
 // Services
 import { ListRenovationsService } from '../../services/list-renovations.service';
 
 // Mis pipes
 import { MispipesModule } from '../../shared/pipes/mispipes.module';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-renovaciones',
@@ -31,12 +37,17 @@ import { MispipesModule } from '../../shared/pipes/mispipes.module';
     NgIconComponent,
     MatTableModule,
     MatPaginatorModule,
+    NgClass,
+    NgIf,
   ],
   viewProviders: [
     provideIcons({
       featherAirplay,
       bootstrapFileEarmark,
       bootstrapSliders,
+      bootstrapClock,
+      bootstrapCheck2,
+      bootstrapXLg,
     }),
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
