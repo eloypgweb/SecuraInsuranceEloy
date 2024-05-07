@@ -61,6 +61,54 @@
     }
   }
 
+  .number-policies-order {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .number-policies {
+      /* Estilos adicionales para "16 pólizas" */
+    }
+
+    .order {
+      display: flex;
+      align-items: center; /* Alinea los elementos en el centro en el eje transversal */
+      gap: 14px;
+    }
+
+    .order span {
+      margin-right: 15px;
+    }
+
+    .order select {
+      border-radius: 4px;
+      border: 1px solid $grey25;
+      padding: 12px;
+      gap: 8px;
+    }
+
+    .select-container {
+      position: relative;
+      display: flex;
+      align-items: center; /* Alinea los elementos en el centro en el eje transversal */
+    }
+
+    .select-container select {
+      -webkit-appearance: none; /* Remueve la flecha predeterminada en Chrome, Safari... */
+      -moz-appearance: none; /* Remueve la flecha predeterminada en Firefox */
+      appearance: none; /* Remueve la flecha predeterminada en otros navegadores */
+      padding-right: 30px; /* Añade un padding a la derecha para evitar que el texto se superponga con el icono */
+      cursor: pointer; /* Cambia el cursor al pasar sobre el select */
+    }
+
+    .select-container .mat-icon {
+      position: absolute;
+      right: 5px; /* Ajusta la posición del icono para que se alinee con el padding del select */
+      pointer-events: none; /* Hace que el icono sea "click-through", permitiendo interactuar con el select debajo */
+    }
+  }
+
   .table-zone {
     padding: 40px 24px 80px 24px;
     gap: 40px;
@@ -116,15 +164,21 @@
           width: fit-content;
           padding: 2px 8px 2px 8px;
         }
+
+        .details-header,
+        .details-cell {
+          width: 1%; /* Ajusta el ancho de la columna al mínimo necesario */
+          white-space: nowrap; /* Evita que el texto se ajuste a la línea */
+        }
+
+        .details-cell {
+          text-align: center; /* Centra el contenido de la celda */
+        }
       }
 
       .paginator {
         background-color: $light;
       }
     }
-
-    // .number-policies-order {.number-policies {} .order {}}
-
-    // .table {}
   }
 }

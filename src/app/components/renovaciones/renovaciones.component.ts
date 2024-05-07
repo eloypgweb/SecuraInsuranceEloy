@@ -19,6 +19,8 @@ import {
   bootstrapClock,
   bootstrapCheck2,
   bootstrapXLg,
+  bootstrapChevronDown,
+  bootstrapEye,
 } from '@ng-icons/bootstrap-icons';
 
 // Services
@@ -27,6 +29,7 @@ import { ListRenovationsService } from '../../services/list-renovations.service'
 // Mis pipes
 import { MispipesModule } from '../../shared/pipes/mispipes.module';
 import { NgClass, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-renovaciones',
@@ -39,6 +42,7 @@ import { NgClass, NgIf } from '@angular/common';
     MatPaginatorModule,
     NgClass,
     NgIf,
+    FormsModule,
   ],
   viewProviders: [
     provideIcons({
@@ -48,6 +52,8 @@ import { NgClass, NgIf } from '@angular/common';
       bootstrapClock,
       bootstrapCheck2,
       bootstrapXLg,
+      bootstrapChevronDown,
+      bootstrapEye,
     }),
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -97,5 +103,24 @@ export class RenovacionesComponent implements AfterViewInit {
     this.listRenovationsService.listRenovations.subscribe((data: any) => {
       this.dataSource.data = data;
     });
+  }
+
+  orderType: 'asc' | 'desc' = 'asc';
+
+  applySorting() {
+    const data = this.dataSource.data.slice(); // Hacemos una copia de los datos
+    if (this.orderType === 'asc') {
+      // Ordenamos los datos de menor a mayor
+      data.sort((a, b) => a.amount - b.amount);
+    } else {
+      // Ordenamos los datos de mayor a menor
+      data.sort((a, b) => b.amount - a.amount);
+    }
+    // Actualizamos los datos en la tabla
+    this.dataSource.data = data;
+  }
+
+  applyFilters() {
+    // Add your code here to apply the filters
   }
 }

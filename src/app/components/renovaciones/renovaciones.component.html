@@ -13,7 +13,7 @@
 
       <div class="policies">
         <ng-icon class="mat-icon" name="bootstrapFileEarmark"></ng-icon>
-        <span>770 pólizas</span>
+        <span>16 pólizas</span>
       </div>
     </div>
   </div>
@@ -26,8 +26,24 @@
       </button>
     </div>
     <div class="number-policies-order">
-      <div class="number-policies"></div>
-      <div class="order"></div>
+      <div class="number-policies bodyBold">16 pólizas</div>
+      <div class="order">
+        <span class="ordernarPor">Ordenar por:</span>
+        <div class="select-container">
+          <select
+            class="bodyBold"
+            [(ngModel)]="orderType"
+            (change)="applySorting()"
+          >
+            <option class="bodyBold" value="asc">Menor Importe</option>
+            <option class="bodyBold" value="desc">Mayor Importe</option>
+          </select>
+          <ng-icon
+            class="mat-icon iconos"
+            name="bootstrapChevronDown"
+          ></ng-icon>
+        </div>
+      </div>
     </div>
     <div class="table">
       <div>
@@ -112,6 +128,24 @@
             </td>
           </ng-container>
 
+          <!-- A los detalles -->
+          <ng-container matColumnDef="details">
+            <th
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              i18n
+              class="details-header"
+            >
+              Ver Detalles
+            </th>
+            <td mat-cell *matCellDef="let row" class="details-cell">
+              <button [routerLink]="['/renovaciones', row.nPolicy]">
+                <ng-icon class="iconos" name="bootstrapEye"></ng-icon>
+              </button>
+            </td>
+          </ng-container>
+
           <!-- MatHeaderRow -->
           <tr
             class="arriba"
@@ -122,7 +156,8 @@
               'contractDate',
               'expirationDate',
               'amount',
-              'state'
+              'state',
+              'details'
             ]"
           ></tr>
           <tr
@@ -136,7 +171,8 @@
                 'contractDate',
                 'expirationDate',
                 'amount',
-                'state'
+                'state',
+                'details'
               ]
             "
           ></tr>
