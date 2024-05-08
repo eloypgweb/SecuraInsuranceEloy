@@ -20,7 +20,7 @@
 
   <div class="table-zone">
     <div class="filter-btn">
-      <button class="btn">
+      <button class="btn" (click)="toggleFilterMenu()">
         <ng-icon class="iconos" name="bootstrapSliders"></ng-icon>
         <span>Filtros</span>
       </button>
@@ -186,6 +186,68 @@
             class="paginator"
           ></mat-paginator>
         </div>
+      </div>
+    </div>
+
+    <!-- Menú de filtros -->
+    <div class="filter-menu" [ngClass]="{ open: isFilterMenuOpen }">
+      <div class="filter-initial-text">
+        <div class="content-header">
+          <h3 class="bodyBold">Filtros</h3>
+          <!-- Botón para cerrar -->
+          <button class="close-btn" (click)="closeFilterMenu()">
+            <ng-icon class="iconos" name="bootstrapXLg"></ng-icon>
+          </button>
+        </div>
+      </div>
+      <div class="filter-menu-forms">
+        <!-- Campo de filtrado NPoliza -->
+        <div class="filter-field">
+          <label for="npoliza">Nº de Póliza:</label>
+          <select id="npoliza">
+            <!-- Opciones del select -->
+          </select>
+        </div>
+
+        <!-- Campo de filtrado Nombre del riesgo -->
+        <div class="filter-field">
+          <label for="nombreRiesgo">Nombre del riesgo:</label>
+          <input
+            type="text"
+            id="nombreRiesgo"
+            placeholder="Introduce el nombre del riesgo"
+          />
+        </div>
+
+        <!-- Campo de filtrado Fecha de validez -->
+        <div class="filter-field">
+          <label for="fechaValidez">Fecha de validez:</label>
+          <input type="date" id="fechaInicio" />
+          <span class="separator-date">al</span>
+          <input type="date" id="fechaFin" />
+        </div>
+
+        <!-- Campo de filtrado Importe -->
+        <div class="filter-field">
+          <label for="importe">Importe:</label>
+          <input type="number" id="importe" placeholder="Introduzca importe" />
+        </div>
+
+        <!-- Campo de filtrado Estado -->
+        <div class="filter-field">
+          <label for="estado">Estado:</label>
+          <select id="estado">
+            <!-- Opciones del select -->
+          </select>
+        </div>
+      </div>
+
+      <!-- Botones de Aplicar Filtros y Borrar Filtros -->
+      <div class="filter-buttons">
+        <button class="clear-btn">Borrar Filtros</button>
+        <button class="apply-btn" (click)="applyFilters()">
+          Aplicar Filtros
+        </button>
       </div>
     </div>
   </div>

@@ -180,5 +180,119 @@
         background-color: $light;
       }
     }
+
+    .filter-menu {
+      background-color: $filters-bg;
+      box-shadow: -8px 0px 8px rgba(0, 0, 0, 0.1);
+      border-right: 1px solid $grey25;
+      width: 30%;
+      position: fixed;
+      left: -30%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      transition: left 0.3s ease-in-out;
+      height: 100%;
+
+      .filter-initial-text {
+        // height: 5%;
+        padding: 24px 40px 24px 40px;
+
+        h3 {
+          margin: 0; /* Quito cualquier margen */
+        }
+
+        .close-btn {
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+
+        // .close-btn:hover {}
+
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // BEGIN: Add shadow to the bottom
+        border-bottom: 1px solid $grey25;
+
+        .content-header {
+          display: flex;
+          justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+          align-items: center;
+        }
+      }
+
+      .filter-menu-forms {
+        // height: 90%;
+        padding: 32px 40px 32px 40px;
+
+        .separator-date {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      .filter-buttons {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 40px 12px 40px;
+      }
+
+      .clear-btn {
+        border-radius: 8px;
+        padding: 10px 16px;
+        background-color: $light;
+        color: $text;
+        border: 1px solid $primary50;
+
+        &:hover {
+          background-color: $primary25;
+        }
+      }
+
+      .apply-btn {
+        margin-left: auto;
+        border-radius: 8px;
+        padding: 10px 16px;
+        background-color: $primary25;
+        color: $text;
+        border: 1px solid $primary50;
+
+        &:hover {
+          background-color: $light;
+          border: 1px solid $primary50;
+        }
+      }
+    }
+
+    .filter-menu.open {
+      left: 0;
+    }
+
+    .filter-field {
+      margin-bottom: 15px;
+    }
+
+    .filter-field label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .filter-field select,
+    .filter-field input[type="text"],
+    .filter-field input[type="number"] {
+      width: 83%;
+      margin: 0 auto;
+      padding: 12px;
+      border: 1px solid $grey25;
+      border-radius: 4px;
+    }
+
+    .filter-field input[type="date"] {
+      width: 40%;
+      margin: 0 auto;
+      padding: 12px;
+      border: 1px solid $grey25;
+      border-radius: 4px;
+    }
   }
 }

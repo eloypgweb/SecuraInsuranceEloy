@@ -120,7 +120,17 @@ export class RenovacionesComponent implements AfterViewInit {
     this.dataSource.data = data;
   }
 
+  isFilterMenuOpen: boolean = false;
+
+  toggleFilterMenu() {
+    this.isFilterMenuOpen = !this.isFilterMenuOpen;
+  }
+
+  closeFilterMenu() {
+    this.isFilterMenuOpen = false;
+  }
+
   applyFilters() {
-    // Add your code here to apply the filters
+    console.log('Aplicando filtros');
   }
 }
