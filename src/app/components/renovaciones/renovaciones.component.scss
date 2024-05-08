@@ -228,12 +228,43 @@
           margin-left: 10px;
           margin-right: 10px;
         }
+
+        .filter-field {
+          margin-bottom: 15px;
+        }
+
+        .filter-field label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+
+        .filter-field select,
+        .filter-field input[type="text"],
+        .filter-field input[type="number"] {
+          width: 98%;
+          margin: 0 auto;
+          padding: 12px;
+          border: 1px solid $grey25;
+          border-radius: 4px;
+        }
+
+        .filter-field input[type="date"] {
+          width: 46%;
+          margin: 0 auto;
+          padding: 12px;
+          border: 1px solid $grey25;
+          border-radius: 4px;
+        }
       }
 
       .filter-buttons {
         display: flex;
         justify-content: space-between;
         padding: 12px 40px 12px 40px;
+        border-top: 1px solid $grey25;
+        box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); // BEGIN: Add shadow to the top
+        margin-top: 260px;
       }
 
       .clear-btn {
@@ -265,34 +296,6 @@
 
     .filter-menu.open {
       left: 0;
-    }
-
-    .filter-field {
-      margin-bottom: 15px;
-    }
-
-    .filter-field label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    .filter-field select,
-    .filter-field input[type="text"],
-    .filter-field input[type="number"] {
-      width: 83%;
-      margin: 0 auto;
-      padding: 12px;
-      border: 1px solid $grey25;
-      border-radius: 4px;
-    }
-
-    .filter-field input[type="date"] {
-      width: 40%;
-      margin: 0 auto;
-      padding: 12px;
-      border: 1px solid $grey25;
-      border-radius: 4px;
     }
   }
 }
