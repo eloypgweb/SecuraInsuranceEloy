@@ -24,6 +24,15 @@
         <ng-icon class="iconos" name="bootstrapSliders"></ng-icon>
         <span>Filtros</span>
       </button>
+      <div class="filter-chips">
+        <!-- Mostrar chips de filtro -->
+        <div *ngFor="let filter of appliedFilters" class="chip">
+          <span>{{ filter.label }}: {{ filter.value }}</span>
+          <button class="close-btn" (click)="removeFilterChip(filter)">
+            <ng-icon class="iconos" name="bootstrapXLg"></ng-icon>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="number-policies-order">
       <div class="number-policies bodyBold">16 pólizas</div>
@@ -205,44 +214,43 @@
           <!-- Campo de filtrado NPoliza -->
           <div class="filter-field">
             <label for="npoliza">Nº de Póliza:</label>
-            <select id="npoliza">
-              <!-- Opciones del select -->
+            <select id="npoliza" [(ngModel)]="selectedPolicyNumber">
+              <option value="">Seleccione un número de póliza</option>
+              <!-- Itera sobre los números de póliza únicos y crea opciones para el select -->
+              <ng-container *ngFor="let policyNumber of uniquePolicyNumbers">
+                <option [value]="policyNumber">{{ policyNumber }}</option>
+              </ng-container>
             </select>
           </div>
 
           <!-- Campo de filtrado Nombre del riesgo -->
           <div class="filter-field">
-            <label for="nombreRiesgo">Nombre del riesgo:</label>
-            <input
-              type="text"
-              id="nombreRiesgo"
-              placeholder="Introduce el nombre del riesgo"
-            />
+            <label for="riskName">Nombre del riesgo:</label>
+            <input type="text" id="riskName" [(ngModel)]="riskName" />
           </div>
 
           <!-- Campo de filtrado Fecha de validez -->
           <div class="filter-field">
-            <label for="fechaValidez">Fecha de validez:</label>
-            <input type="date" id="fechaInicio" />
+            <label for="startDate">Fecha de inicio:</label>
+            <input type="date" id="startDate" [(ngModel)]="startDate" />
             <span class="separator-date">al</span>
-            <input type="date" id="fechaFin" />
+            <input type="date" id="endDate" [(ngModel)]="endDate" />
           </div>
 
           <!-- Campo de filtrado Importe -->
           <div class="filter-field">
-            <label for="importe">Importe:</label>
-            <input
-              type="number"
-              id="importe"
-              placeholder="Introduzca importe"
-            />
+            <label for="amount">Importe:</label>
+            <input type="number" id="amount" [(ngModel)]="amount" />
           </div>
 
           <!-- Campo de filtrado Estado -->
           <div class="filter-field">
-            <label for="estado">Estado:</label>
-            <select id="estado">
-              <!-- Opciones del select -->
+            <label for="state">Estado:</label>
+            <select id="state" [(ngModel)]="state">
+              <option value="">Todos</option>
+              <option value="pagada">Pagada</option>
+              <option value="pendiente">Pendiente</option>
+              <option value="vencida">Vencida</option>
             </select>
           </div>
         </div>
