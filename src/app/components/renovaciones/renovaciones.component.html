@@ -28,14 +28,24 @@
         <!-- Mostrar chips de filtro -->
         <div *ngFor="let filter of appliedFilters" class="chip">
           <span>{{ filter.label }}: {{ filter.value }}</span>
-          <button class="close-btn" (click)="removeFilterChip(filter)">
-            <ng-icon class="iconos" name="bootstrapXLg"></ng-icon>
+          <button class="close-btn" (click)="removeFilter(filter)">
+            <ng-icon class="iconoX" name="bootstrapX"></ng-icon>
           </button>
         </div>
       </div>
     </div>
     <div class="number-policies-order">
-      <div class="number-policies bodyBold">16 pólizas</div>
+      <div class="number-policies bodyBold" *ngIf="totalFiltersApplied === 0">
+        16 pólizas
+      </div>
+      <div class="number-policies bodyBold" *ngIf="totalFiltersApplied > 0">
+        {{ totalFiltersApplied }} filtros aplicados
+        <div class="borrarFiltros">
+          <button class="borrarFiltros-btn" (click)="clearFilters()">
+            Borrar filtros
+          </button>
+        </div>
+      </div>
       <div class="order">
         <span class="ordernarPor">Ordenar por:</span>
         <div class="select-container">

@@ -68,7 +68,16 @@
     align-items: center;
 
     .number-policies {
-      /* Estilos adicionales para "16 pólizas" */
+      display: flex;
+      .borrarFiltros {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .borrarFiltros-btn {
+          margin-left: 10px;
+          color: $primary;
+        }
+      }
     }
 
     .order {
@@ -114,6 +123,9 @@
     gap: 40px;
 
     .filter-btn {
+      display: flex;
+      justify-content: left;
+      align-items: center;
       .btn {
         width: fit-content;
         padding: 10px 16px 10px 16px;
@@ -122,11 +134,32 @@
         border-radius: 8px;
         display: flex;
         align-items: center;
+        margin-right: 10px;
         &:hover {
           background-color: $primary25;
           color: $renovations-btn-txt;
           border: 1px solid $primary25;
           border-radius: 8px;
+        }
+      }
+
+      .filter-chips {
+        display: flex;
+        gap: 10px;
+        .chip {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: auto;
+          gap: 10px;
+          padding: 4px 16px 4px 16px;
+          border-radius: 99px;
+          background-color: $primary;
+          color: $light;
+
+          .iconoX {
+            color: $light;
+          }
         }
       }
     }

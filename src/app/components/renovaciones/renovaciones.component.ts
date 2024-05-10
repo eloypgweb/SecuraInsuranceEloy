@@ -19,6 +19,7 @@ import {
   bootstrapClock,
   bootstrapCheck2,
   bootstrapXLg,
+  bootstrapX,
   bootstrapChevronDown,
   bootstrapEye,
 } from '@ng-icons/bootstrap-icons';
@@ -53,6 +54,7 @@ import { FormsModule } from '@angular/forms';
       bootstrapClock,
       bootstrapCheck2,
       bootstrapXLg,
+      bootstrapX,
       bootstrapChevronDown,
       bootstrapEye,
     }),
@@ -77,12 +79,15 @@ export class RenovacionesComponent implements AfterViewInit {
   // Declaraciones para filtros
   selectedPolicyNumber: string | undefined; // Propiedad para almacenar el número de póliza seleccionado
   riskName: string = ''; // Inicializa riskName como una cadena vacía
-  startDate: Date | undefined;
-  endDate: Date | undefined;
-  amount: number | undefined;
-  state: string | undefined;
+  startDate: Date | undefined; // Inicializa startDate como indefinido
+  endDate: Date | undefined; // Inicializa endDate como indefinido
+  amount: number | undefined; // Inicializa amount como indefinido
+  state: string | undefined; // Inicializa state como indefinido
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  // Total de filtros aplicados
+  totalFiltersApplied = 0;
 
   constructor(
     private listRenovationsService: ListRenovationsService,
@@ -156,17 +161,18 @@ export class RenovacionesComponent implements AfterViewInit {
 
   applyFilters() {
     let filteredData = this.listRenovationsService.listRenovations.value; // Accede a los datos cargados por el servicio
-    // Obtenemos el valor seleccionado del número de póliza
-    const selectedNumber = this.selectedPolicyNumber;
+    this.totalFiltersApplied = 0; // Reinicia el contador de filtros aplicados
 
     // Filtrar los datos según el número de póliza seleccionado
     if (this.selectedPolicyNumber) {
       this.dataSource.filter = this.selectedPolicyNumber.trim().toLowerCase();
+      this.totalFiltersApplied++; // Incrementa el contador de filtros aplicados
     }
     if (this.riskName) {
       filteredData = filteredData.filter((item: any) =>
         item.riskName.toLowerCase().includes(this.riskName.toLowerCase())
       );
+      this.totalFiltersApplied++; // Incrementa el contador de filtros aplicados
     }
     if (this.startDate && this.endDate) {
       // Verifica que tanto startDate como endDate tengan valores asignados
@@ -175,17 +181,20 @@ export class RenovacionesComponent implements AfterViewInit {
           item.contractDate >= this.startDate! &&
           item.contractDate <= this.endDate!
       );
+      this.totalFiltersApplied++; // Incrementa el contador de filtros aplicados
     }
 
     if (this.amount) {
       filteredData = filteredData.filter(
         (item: any) => item.amount === this.amount
       );
+      this.totalFiltersApplied++; // Incrementa el contador de filtros aplicados
     }
     if (this.state) {
       filteredData = filteredData.filter(
         (item: any) => item.state === this.state
       );
+      this.totalFiltersApplied++; // Incrementa el contador de filtros aplicados
     }
 
     this.dataSource.data = filteredData;
@@ -229,17 +238,52 @@ export class RenovacionesComponent implements AfterViewInit {
   }
 
   // Método para eliminar un chip de filtro y actualizar la tabla
-  removeFilterChip(filter: any) {
-    // console.log('removeFilterChip' + filter);
-    // Encuentra el índice del filtro en el array appliedFilters
-    const index = this.appliedFilters.indexOf(filter);
+  removeFilter(filter: { label: string; value: any }) {
+    console.log('Filtro eliminado: ' + filter.label + ' ' + filter.value);
+    // Elimina el filtro correspondiente
+    switch (filter.label) {
+      case 'Nº de Póliza':
+        this.selectedPolicyNumber = undefined;
+        break;
+      case 'Nombre del riesgo':
+        this.riskName = '';
+        break;
+      case 'Fecha de inicio':
+      case 'Fecha de fin':
+        this.startDate = undefined;
+        this.endDate = undefined;
+        break;
+      case 'Importe':
+        this.amount = undefined;
+        break;
+      case 'Estado':
+        this.state = undefined;
+        break;
+    }
 
-    // Si se encuentra el filtro, elimínalo del array
+    // Elimina el chip correspondiente
+    const index = this.appliedFilters.indexOf(filter);
     if (index >= 0) {
       this.appliedFilters.splice(index, 1);
-
-      // Aplica los filtros nuevamente para actualizar la tabla
-      this.applyFilters();
     }
+
+    // Aplica los filtros restantes
+    this.applyFilters();
+  }
+
+  clearFilters() {
+    // Elimina todos los filtros
+    this.selectedPolicyNumber = undefined;
+    this.riskName = '';
+    this.startDate = undefined;
+    this.endDate = undefined;
+    this.amount = undefined;
+    this.state = undefined;
+
+    // Limpia los chips de filtro
+    this.appliedFilters = [];
+
+    // Aplica los filtros restantes (que ahora están vacíos)
+    this.applyFilters();
   }
 }
