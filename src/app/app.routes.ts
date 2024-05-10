@@ -20,6 +20,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'renovaciones/:nPolicy',
+    loadComponent: () =>
+      import('./components/detalle-poliza/detalle-poliza.component').then(
+        (r) => r.DetallePolizaComponent
+      ),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./shared/not-found-page/not-found-page.component').then(
