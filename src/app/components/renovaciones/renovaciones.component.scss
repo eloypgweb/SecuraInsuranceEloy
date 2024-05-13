@@ -44,20 +44,20 @@
       display: flex;
       align-items: center;
       margin-top: 50px;
-    }
 
-    .renovations {
-      flex-grow: 1;
-    }
+      .renovations {
+        flex-grow: 1;
+      }
 
-    .policies {
-      background-color: $renovations-btn-bg; /* Color de fondo gris */
-      color: $renovations-btn-txt; /* Color del texto gris */
-      padding: 8px 12px 8px 12px; /* Espaciado interno */
-      border-radius: 8px; /* Forma circular */
-      gap: 12px; /* Espaciado entre elementos */
-      display: flex;
-      align-items: center;
+      .policies {
+        background-color: $renovations-btn-bg; /* Color de fondo gris */
+        color: $renovations-btn-txt; /* Color del texto gris */
+        padding: 8px 12px 8px 12px; /* Espaciado interno */
+        border-radius: 8px; /* Forma circular */
+        gap: 12px; /* Espaciado entre elementos */
+        display: flex;
+        align-items: center;
+      }
     }
   }
 

@@ -1,1 +1,332 @@
-<p>Bienvenido al detalle de la póliza:</p>
+<!-- <p>Bienvenido al detalle de la póliza: {{ nPolicy }}</p> -->
+
+<div class="general-container">
+  <div class="first-info">
+    <div class="container-breadcrumbs">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="/renovaciones">Detalle de póliza</a>
+        </li>
+        <li class="breadcrumb-item active" disabled>
+          <a routerLink="/">{{ nPolicy }}</a>
+        </li>
+      </ul>
+      <div class="renovations-policies">
+        <div class="renovations">
+          <h3 class="subtitle prox-renov">{{ detalles2.riskName }}</h3>
+          <div class="num-policy">
+            <span>No. de póliza: {{ nPolicy }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="inside-container">
+    <div class="info-cards">
+      <mat-card class="card">
+        <mat-card-header class="cardHeaderOne">
+          <mat-card-title class="subtitle cardTitle">Titular</mat-card-title>
+          <div class="edit">
+            <button class="btn">
+              <ng-icon class="mr-2" name="bootstrapPencilSquare"></ng-icon>
+              <a href="#">Actualizar</a>
+            </button>
+          </div>
+        </mat-card-header>
+        <mat-card-content class="cardContent">
+          <!-- CIF -->
+          <div class="campo">
+            <span>CIF:</span>
+            <p class="bodyBold">{{ detalles2.ownerData.cif }}</p>
+          </div>
+          <!-- Nombre -->
+          <div class="campo">
+            <span>Nombre:</span>
+            <p class="bodyBold">
+              {{ detalles2.ownerData.name }}
+              {{ detalles2.ownerData.surname }}
+            </p>
+          </div>
+          <!-- Direccion Fiscal -->
+          <div class="campo">
+            <span>Dirección fiscal:</span>
+            <p class="bodyBold">{{ detalles2.ownerData.fiscalAddress }}</p>
+          </div>
+          <!-- Estado poliza -->
+          <div class="campo">
+            <span>Estado de la póliza:</span>
+            <div class="flag">
+              <ng-icon class="mr-2" name="bootstrapCheck2"></ng-icon>
+              <p>
+                {{
+                  detalles2.ownerData.state === "vigente"
+                    ? "Vigente"
+                    : detalles2.ownerData.state
+                }}
+              </p>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="card">
+        <mat-card-header class="cardHeaderOne">
+          <mat-card-title class="subtitle cardTitle"
+            >Dirección de Facturación</mat-card-title
+          >
+          <div class="edit">
+            <button class="btn">
+              <ng-icon class="mr-2" name="bootstrapPencilSquare"></ng-icon>
+              <a href="#">Actualizar</a>
+            </button>
+          </div>
+        </mat-card-header>
+        <mat-card-content class="cardContent">
+          <!-- Direccion -->
+          <div class="campo">
+            <span>Dirección:</span>
+            <p class="bodyBold">{{ detalles2.invoicingDepartment.address }}</p>
+          </div>
+          <!-- Numero -->
+          <div class="campo">
+            <span>Número:</span>
+            <p class="bodyBold">
+              {{ detalles2.invoicingDepartment.addressCode }}
+            </p>
+          </div>
+          <!-- Ciudad -->
+          <div class="campo">
+            <span>Ciudad:</span>
+            <p class="bodyBold">
+              {{ detalles2.invoicingDepartment.city }},
+              {{ detalles2.invoicingDepartment.country }}
+            </p>
+          </div>
+          <!-- Codigo Postal -->
+          <div class="campo">
+            <span>Código postal:</span>
+            <p class="bodyBold">
+              {{ detalles2.invoicingDepartment.postalCode }}
+            </p>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="last-cuotes">
+      <h3 class="mb-5" i18n>Últimas cuotas</h3>
+      <div>
+        <table mat-table [dataSource]="detalles2.instalments">
+          <!-- Fecha de emisión -->
+          <ng-container matColumnDef="issueDate">
+            <th mat-header-cell *matHeaderCellDef i18n>Fecha de emisión</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.issueDate | formatoFecha }}
+            </td>
+          </ng-container>
+
+          <!-- Periodo -->
+          <ng-container matColumnDef="period">
+            <th mat-header-cell *matHeaderCellDef i18n>Periodo</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.startDate | formatoFecha }} -
+              {{ element.endDate | formatoFecha }}
+            </td>
+          </ng-container>
+
+          <!-- Importe -->
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef i18n>Importe</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.amount | formatoDinero }}
+            </td>
+          </ng-container>
+
+          <!-- Estado de la póliza -->
+          <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef i18n>Estado de la póliza</th>
+            <td mat-cell *matCellDef="let element">
+              <div
+                [ngClass]="
+                  element.state === 'pagada'
+                    ? 'bg-green-100 text-green-700'
+                    : 'bg-yellow-100 text-gray-600'
+                "
+                class="flag rounded-lg inline-block"
+              >
+                <ng-container
+                  *ngIf="element.state === 'pagada'; else pendiente"
+                >
+                  <ng-icon class="mr-2" name="bootstrapCheck2"></ng-icon>
+                  Pagada
+                </ng-container>
+                <ng-template #pendiente>
+                  <ng-icon class="mr-2" name="bootstrapClock"></ng-icon>
+                  Pendiente
+                </ng-template>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr
+            class="arriba"
+            mat-header-row
+            *matHeaderRowDef="['issueDate', 'period', 'amount', 'state']"
+          ></tr>
+          <tr
+            class="abajo"
+            mat-row
+            *matRowDef="
+              let row;
+              columns: ['issueDate', 'period', 'amount', 'state']
+            "
+          ></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="info-cards-2">
+      <!-- Método de pago -->
+      <mat-card class="card">
+        <mat-card-header class="cardHeader">
+          <mat-card-title class="subtitle cardTitle"
+            >Método de pago</mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content class="cardContent">
+          <!-- Nombre -->
+          <div class="campo">
+            <span>Nombre:</span>
+            <p class="bodyBold">{{ detalles2.paymentMethod.name }}</p>
+          </div>
+          <!-- CIF -->
+          <div class="campo">
+            <span>CIF:</span>
+            <p class="bodyBold">
+              {{ detalles2.paymentMethod.cif }}
+            </p>
+          </div>
+          <!-- Tipo de cobro -->
+          <div class="campo">
+            <span>Tipo de cobro:</span>
+            <p class="bodyBold">
+              {{ detalles2.paymentMethod.type }}
+            </p>
+          </div>
+          <!-- IBAN -->
+          <div class="campo">
+            <span>IBAN:</span>
+            <p class="bodyBold">
+              {{ detalles2.paymentMethod.iban }}
+            </p>
+          </div>
+          <!-- Banco -->
+          <div class="campo">
+            <span>Banco:</span>
+            <p class="bodyBold">
+              {{ detalles2.paymentMethod.bank }}
+            </p>
+          </div>
+        </mat-card-content>
+        <div class="campo edit">
+          <button>
+            <ng-icon class="mr-2" name="bootstrapPencilSquare"></ng-icon>
+            <a href="#">Actualizar</a>
+          </button>
+        </div>
+      </mat-card>
+
+      <!-- Dir de correspondencia -->
+      <mat-card class="card">
+        <mat-card-header class="cardHeader">
+          <mat-card-title class="subtitle cardTitle"
+            >Dir. de correspondencia</mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content class="cardContent">
+          <!-- Datos -->
+          <div class="campo">
+            <span>Datos:</span>
+            <p class="bodyBold">{{ detalles2.correspondenceAddress.name }}</p>
+          </div>
+          <!-- Población -->
+          <div class="campo">
+            <span>Población:</span>
+            <p class="bodyBold">
+              {{ detalles2.correspondenceAddress.city }},
+              {{ detalles2.correspondenceAddress.country }}
+            </p>
+          </div>
+          <!-- Código postal -->
+          <div class="campo">
+            <span>Código postal:</span>
+            <p class="bodyBold">
+              {{ detalles2.correspondenceAddress.postalCode }}
+            </p>
+          </div>
+          <!-- Dirección -->
+          <div class="campo">
+            <span>Dirección:</span>
+            <p class="bodyBold">
+              {{ detalles2.correspondenceAddress.address }}
+            </p>
+          </div>
+          <!-- Número -->
+          <div class="campo">
+            <span>Número:</span>
+            <p class="bodyBold">
+              {{ detalles2.correspondenceAddress.addressCode }}
+            </p>
+          </div>
+          <!-- Aclarador -->
+          <div class="campo">
+            <span>Aclarador:</span>
+            <p class="bodyBold">
+              {{ detalles2.correspondenceAddress.detail }}
+            </p>
+          </div>
+        </mat-card-content>
+        <div class="campo edit">
+          <button>
+            <ng-icon class="mr-2" name="bootstrapPencilSquare"></ng-icon>
+            <a href="#">Actualizar</a>
+          </button>
+        </div>
+      </mat-card>
+
+      <!-- Contacto -->
+      <mat-card class="card">
+        <mat-card-header class="cardHeader">
+          <mat-card-title class="subtitle cardTitle">Contacto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="cardContent">
+          <!-- Correo principal -->
+          <div class="campo">
+            <span>Correo principal:</span>
+            <p class="bodyBold">{{ detalles2.contactData.email }}</p>
+          </div>
+          <!-- Correo 2 -->
+          <div class="campo">
+            <span>Correo 2:</span>
+            <p class="bodyBold">
+              {{ detalles2.contactData.email2 }}
+            </p>
+          </div>
+          <!-- Ciudad -->
+          <div class="campo">
+            <span>Telefono principal:</span>
+            <p class="bodyBold">
+              {{ detalles2.contactData.phone }}
+            </p>
+          </div>
+        </mat-card-content>
+        <div class="campo edit">
+          <button>
+            <ng-icon class="mr-2" name="bootstrapPencilSquare"></ng-icon>
+            <a href="#">Actualizar</a>
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
